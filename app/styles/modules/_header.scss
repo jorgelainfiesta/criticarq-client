@@ -1,0 +1,33 @@
+.site-nav {
+  @include clearfix;
+  background: $header-background;
+  color: $header-text;
+  padding: unit-space(1) unit-space(2);
+
+  .logo {
+    float: left;
+    a {
+      background: url(images/logo.svg) no-repeat;
+      text-indent: 1000px;
+      overflow: hidden;
+      display: inline-block;
+      width: 178px;
+      height: 41px;
+    }
+  }
+  nav {
+    float: right;
+    font-family: $title-font;
+    font-weight: bold;
+
+    a {
+      color: $header-text;
+      text-transform: uppercase;
+      font-size: $header-links;
+      text-decoration: none;
+      padding: unit-space(0.5);
+      margin-left: unit-space(1);
+      display: inline-block;
+    }
+  }
+}

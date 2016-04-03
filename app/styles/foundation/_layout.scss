@@ -1,0 +1,18 @@
+@mixin content-column() {
+  margin: unit-space(1);
+  @include tablet {
+    margin: unit-space(2);
+  }
+  @include desktop {
+    max-width: $content-column-width;
+    margin: 0 auto;
+  }
+}
+
+@mixin clearfix() {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}

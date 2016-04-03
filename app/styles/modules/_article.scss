@@ -1,0 +1,22 @@
+.article-read {
+  @include content-column;
+  @include body-copy;
+  color: #1a1a1a;
+
+  .article-title {
+    @include large-title;
+  }
+  .article-author {
+    @include sub-title;
+  }
+  .article-intro {
+    @include body-intro;
+  }
+  .article-content {
+    margin: unit-space(1) 0;
+
+    p {
+      margin-bottom: unit-space(1);
+    }
+  }
+}
