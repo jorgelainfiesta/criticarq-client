@@ -1,8 +1,7 @@
-import DS from 'ember-data';
-import PostModel from 'ember-wordpress/models/post';
+import Model from 'ember-data/model';
 import attr from 'ember-data/attr';
 
-export default PostModel.extend({
+export default Model.extend({
   caption: attr('string'),
   source_url: attr('string')
 });

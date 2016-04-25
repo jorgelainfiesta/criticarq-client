@@ -1,8 +1,9 @@
-import PostModel from 'ember-wordpress/models/post';
-import { belongsTo } from 'ember-data/relationships';
+import Model from 'ember-data/model';
 import attr from 'ember-data/attr';
 
-export default PostModel.extend({
-  authors_short: attr('string'),
-  featured_media: belongsTo('medium')
+export default Model.extend({
+  title: attr('string'),
+  content: attr('string'),
+  excerpt: attr('string'),
+  authorsShort: attr('string')
 });
