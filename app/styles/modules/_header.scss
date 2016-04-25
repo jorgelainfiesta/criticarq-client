@@ -18,7 +18,9 @@
   nav {
     float: right;
     font-family: $title-font;
-    font-weight: bold;
+    letter-spacing: 3px;
+    -webkit-font-smoothing: antialiased;
+  	-moz-osx-font-smoothing: grayscale;
 
     a {
       color: $header-text;
@@ -28,6 +30,7 @@
       padding: unit-space(0.5);
       margin-left: unit-space(1);
       display: inline-block;
+      line-height: 24px;
     }
   }
 }

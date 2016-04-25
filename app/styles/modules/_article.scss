@@ -12,11 +12,53 @@
   .article-intro {
     @include body-intro;
   }
+
   .article-content {
     margin: unit-space(1) 0;
 
     p {
       margin-bottom: unit-space(1);
+      i {
+        font-style: italic;
+      }
+      b {
+        font-weight: bold;
+      }
+      a {
+        text-decoration: none;
+        color: #1a1a1a;
+        border-bottom: 1px solid #BFBFBF;
+      }
+      img {
+        margin: unit-space(1) 0;
+        max-width: 100%;
+        height: auto;
+        @include desktop {
+          max-width: 161.8%;
+          left: 50%;
+          position: relative;
+          transform: translate(-50%, 0);
+        }
+      }
+    }
+    .wp-caption {
+      max-width: 100%;
+      img {
+        width: 100%;
+        height: auto;
+      }
+      .wp-caption-text {
+        text-align: center;
+        color: #757575;
+        @include caption-text;
+      }
+      @include desktop {
+        max-width: 161.8%;
+        left: 50%;
+        position: relative;
+        transform: translate(-50%, 0);
+      }
     }
   }
+
 }
