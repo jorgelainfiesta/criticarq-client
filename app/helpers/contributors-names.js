@@ -7,7 +7,7 @@ export function contributorsNames([contributors]) {
     if (i < contributors.get('length') - 1) {
       sumNames += ' + ';
     }
-  })
+  });
   return sumNames;
 }
 

@@ -17,7 +17,7 @@ module.exports = function(environment) {
       // Here you can pass flags/options to your application instance
       // when it is created
     },
-    wordpressHost: 'http://104.197.75.19'
+    apiHost: 'http://content.criticarq.gt'
   };
 
   if (environment === 'development') {
@@ -26,7 +26,6 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
-    ENV.apiHost = '';
   }
 
   if (environment === 'test') {
@@ -42,7 +41,6 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-    ENV.apiHost = 'https://criticarq.herokuapp.com/ghost/api/v0.1';
   }
 
   return ENV;
