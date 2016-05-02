@@ -6,6 +6,8 @@ export default Model.extend({
   title: attr('string'),
   content: attr('string'),
   excerpt: attr('string'),
-  authorsShort: attr('string'),
-  contributors: hasMany()
+  slug: attr('string'),
+  featured: attr(),
+  contributors: hasMany(),
+  categories: hasMany()
 });

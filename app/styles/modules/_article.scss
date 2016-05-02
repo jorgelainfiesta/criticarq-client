@@ -1,18 +1,92 @@
+.article-single {
+  header {
+    border: 5px solid #fff;
+    box-sizing: border-box;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  &.category-urbanismo {
+    .article-title, .article-title a {
+      color: $category-urbanismo;
+    }
+    .read-more {
+      color: $category-urbanismo;
+    }
+    .category-link {
+      background-color: $category-urbanismo;
+      &.alternative {
+        border-color: $category-urbanismo;
+      }
+    }
+  }
+
+  &.full {
+    .article-intro {
+      @include body-intro;
+    }
+  }
+  &.preview {
+    header {
+      width: 100%;
+      height: 340px;
+      overflow: hidden;
+      position: relative;
+      img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+}
+
+.category-label {
+  .category-link {
+    @include sub-title;
+    display: inline-block;
+    padding: unit-space(0.5);
+    color: #fff;
+    text-decoration: none;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #fff;
+    text-transform: uppercase;
+    &.alternative {
+      background: #fff;
+    }
+  }
+}
+
 .article-read {
   @include content-column;
   @include body-copy;
   color: #1a1a1a;
+  position: relative;
 
   .article-title {
     @include large-title;
+    margin-bottom: 0;
+    a {
+      text-decoration: none;
+    }
+  }
+  .category-label {
+    position: absolute;
+    top: -90px;
   }
   .article-author {
     @include sub-title;
   }
-  .article-intro {
-    @include body-intro;
+  .read-more {
+    @include sub-title;
+    text-decoration: none;
+    border: none;
+    padding: unit-space(1) 0;
+    display: inline-block;
   }
-
   .article-content {
     margin: unit-space(1) 0;
 

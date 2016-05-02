@@ -5,9 +5,9 @@ const {
   computed
 } = Ember;
 
-export default Component.extend({
-  classNames: ['article-single'],
-  classNameBindings: ['preview:preview:full', 'categoryClass'],
+export default Ember.Component.extend({
+  classNames: ['category-label'],
+  classNameBindings: ['categoryClass'],
 
   categoryClass: computed('category.slug', {
     get() {

@@ -1,6 +1,15 @@
+<header>
+  <img src="{{article.featured.post-thumbnail.url}}" alt="" />
+</header>
+
 <article class="article-read">
+  {{#unless preview}}
+    {{category-label category=category}}
+  {{/unless}}
   <h2 class="article-title">
-    {{article.title}}
+    {{#link-to 'articles.category.article' article.slug}}
+      {{article.title}}
+    {{/link-to}}
   </h2>
   <h3 class='article-author'>
     {{contributors-names article.contributors}}
@@ -8,7 +17,15 @@
   <div class="article-intro">
     {{{article.excerpt}}}
   </div>
-  <div class="article-content">
-    {{{article.content}}}
-  </div>
+  {{#unless preview}}
+    <div class="article-content">
+      {{{article.content}}}
+    </div>
+  {{/unless}}
+
+  {{#if preview}}
+    {{#link-to 'articles.category.article' article.slug class="read-more"}}
+      Seguir leyendo &raquo;
+    {{/link-to}}
+  {{/if}}
 </article>
