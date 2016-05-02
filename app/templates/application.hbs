@@ -3,9 +3,9 @@
     {{#link-to 'index'}}CRITICarq.gt{{/link-to}}
   </h1>
   <nav>
-    <a href="#">Urbanismo</a>
-    <a href="#">Política</a>
-    <a href="#">Academia</a>
+    {{#each model.categories as |category|}}
+      {{category-nav category=category}}
+    {{/each}}
   </nav>
 </header>
 

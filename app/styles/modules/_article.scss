@@ -7,20 +7,23 @@
       height: auto;
     }
   }
-  &.category-urbanismo {
-    .article-title, .article-title a {
-      color: $category-urbanismo;
-    }
-    .read-more {
-      color: $category-urbanismo;
-    }
-    .category-link {
-      background-color: $category-urbanismo;
-      &.alternative {
-        border-color: $category-urbanismo;
+  @each $category-slug, $category-color in $category-colors {
+    &.category-#{$category-slug} {
+      .article-title, .article-title a {
+        color: $category-color;
+      }
+      .read-more {
+        color: $category-color;
+      }
+      .category-link {
+        background-color: $category-color;
+        &.alternative {
+          border-color: $category-color;
+        }
       }
     }
   }
+
 
   &.full {
     .article-intro {

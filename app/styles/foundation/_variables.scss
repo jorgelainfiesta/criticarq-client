@@ -25,5 +25,9 @@ $body-copy-line-height: 28px;
 $content-column-width: 600px;
 
 // Colors
-
-$category-urbanismo: #e74c3c;
+$category-colors:
+  (arquitectura, #e74c3c),
+  (urbanismo, #2980b9),
+  (politica, #2c3e50),
+  (academico, #2f475b),
+;
