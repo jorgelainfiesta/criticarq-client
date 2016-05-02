@@ -18,9 +18,11 @@
     {{{article.excerpt}}}
   </div>
   {{#unless preview}}
+    {{social-widget text=article.socialText}}
     <div class="article-content">
       {{{article.content}}}
     </div>
+    {{social-widget text=article.socialText}}
   {{/unless}}
 
   {{#if preview}}

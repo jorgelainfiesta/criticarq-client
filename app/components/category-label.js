@@ -5,7 +5,7 @@ const {
   computed
 } = Ember;
 
-export default Ember.Component.extend({
+export default Component.extend({
   classNames: ['category-label'],
   classNameBindings: ['categoryClass'],
 

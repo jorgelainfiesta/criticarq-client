@@ -7,7 +7,10 @@ export default Model.extend({
   content: attr('string'),
   excerpt: attr('string'),
   slug: attr('string'),
+  socialText: attr('string'),
+
   featured: attr(),
+
   contributors: hasMany(),
   categories: hasMany()
 });

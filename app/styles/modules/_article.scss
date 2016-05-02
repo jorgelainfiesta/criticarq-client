@@ -80,6 +80,34 @@
   .article-author {
     @include sub-title;
   }
+  .jssocials {
+    @include sub-title;
+    font-size: 20px;
+    padding: unit-space(0.25) 0;
+    margin: unit-space(1) 0 unit-space(0.25) 0;
+    border: 1px solid #ccc;
+    border-width: 1px 0;
+    .jssocials-share {
+      margin-left: 30px;
+      &:first-child {
+        margin-left: 0;
+      }
+     .jssocials-share-logo {
+       font-size: 24px;
+     }
+    }
+    @include desktop {
+      .jssocials-share {
+        margin-left: 15px;
+        .jssocials-share-logo {
+          font-size: 18px;
+        }
+        .jssocials-share-label {
+          font-size: 16px;
+        }
+      }
+    }
+  }
   .read-more {
     @include sub-title;
     text-decoration: none;
