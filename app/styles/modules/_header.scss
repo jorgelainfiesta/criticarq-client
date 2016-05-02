@@ -31,6 +31,12 @@
       margin-left: unit-space(1);
       display: inline-block;
       line-height: 24px;
+
+      @each $category-slug, $category-color in $category-colors {
+        &.#{$category-slug} {
+            color: $category-color;
+        }
+      }
     }
   }
 }

@@ -26,7 +26,7 @@
   font-family: $title-font;
   font-size: $body-cation-size;
   font-weight: bold;
-  // margin: unit-space(2) 0;
+  line-height: $body-cation-size * 1.4;
 }
 
 @mixin sub-title {

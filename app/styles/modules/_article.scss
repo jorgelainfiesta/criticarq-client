@@ -123,10 +123,10 @@
 
     p {
       margin-bottom: unit-space(1);
-      i {
+      i, em {
         font-style: italic;
       }
-      b {
+      b, strong {
         font-weight: bold;
       }
       a {

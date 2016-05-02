@@ -4,7 +4,9 @@
   </h1>
   <nav>
     {{#each model.categories as |category|}}
-      {{category-nav category=category}}
+      {{#link-to 'articles.category' category.slug activeClass=category.slug}}
+        {{category.name}}
+      {{/link-to}}
     {{/each}}
   </nav>
 </header>

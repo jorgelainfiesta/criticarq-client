@@ -1,1 +1,5 @@
 {{article-single article=model.article category=model.category}}
+
+{{#each model.article.contributors as |contributor|}}
+  {{contributor-bio contributor=contributor}}
+{{/each}}
