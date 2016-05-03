@@ -1,0 +1,30 @@
+.contributor-bio {
+  @include content-column;
+  @include body-copy;
+  color: #1a1a1a;
+  position: relative;
+  border-top: 5px solid $header-background;
+  margin-top: unit-space(2);
+
+  h3 {
+    @include sub-title;
+    border: none;
+    padding: 0;
+  }
+  .photo {
+    position: absolute;
+    width: 150px;
+    left: 0;
+    top: 30px;
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+  .content {
+    padding-left: 200px;
+    p {
+      @include  caption-text;
+    }
+  }
+}

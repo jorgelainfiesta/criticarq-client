@@ -3,5 +3,6 @@ import attr from 'ember-data/attr';
 
 export default Model.extend({
   contributorName: attr('string'),
-  contributorBio: attr('string')
+  contributorBio: attr('string'),
+  contributorImage: attr()
 });
