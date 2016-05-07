@@ -29,6 +29,15 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
+    ENV.metricsAdapters = [
+      {
+        name: 'GoogleAnalytics',
+        environments: ['development'],
+        config: {
+          id: 'UA-44116271-3'
+        }
+      }
+    ];
   }
 
   if (environment === 'test') {
@@ -44,6 +53,15 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
+    ENV.metricsAdapters = [
+      {
+        name: 'GoogleAnalytics',
+        environments: ['production'],
+        config: {
+          id: 'UA-77428422-1'
+        }
+      }
+    ];
   }
 
   return ENV;
