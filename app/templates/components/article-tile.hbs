@@ -1,0 +1,9 @@
+<h3 class="article-title">
+  {{#link-to 'articles.category.article' category.slug article.slug}}
+    {{article.title}}
+  {{/link-to}}
+</h3>
+<h4 class="article-author">
+  {{contributors-names article.contributors}}
+</h4>
+{{category-label category=category}}

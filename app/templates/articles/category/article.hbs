@@ -12,6 +12,9 @@
 </section>
 
 <section class="suggested-articles">
-  <h2>Más para estudiar</h2>
-  
+  <div class="articles-tiles-grid">
+    {{#each model.article.related as |article|}}
+      {{article-tile article=article}}
+    {{/each}}
+  </div>
 </section>

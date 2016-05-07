@@ -1,0 +1,10 @@
+@each $category-slug, $category-color in $category-colors {
+  &.category-#{$category-slug} {
+    .category-link {
+      background-color: $category-color;
+      &.alternative {
+        border-color: $category-color;
+      }
+    }
+  }
+}

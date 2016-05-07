@@ -12,5 +12,6 @@ export default Model.extend({
   featured: attr(),
 
   contributors: hasMany(),
-  categories: hasMany()
+  categories: hasMany(),
+  related: hasMany('article')
 });

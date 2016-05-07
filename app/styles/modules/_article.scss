@@ -1,12 +1,4 @@
 .article-single {
-  header {
-    border: 5px solid #fff;
-    box-sizing: border-box;
-    img {
-      width: 100%;
-      height: auto;
-    }
-  }
   @each $category-slug, $category-color in $category-colors {
     &.category-#{$category-slug} {
       .article-title, .article-title a {
@@ -15,16 +7,17 @@
       .read-more {
         color: $category-color;
       }
-      .category-link {
-        background-color: $category-color;
-        &.alternative {
-          border-color: $category-color;
-        }
-      }
     }
   }
 
-
+  header {
+    border: 5px solid #fff;
+    box-sizing: border-box;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
   &.full {
     .article-intro {
       @include body-intro;

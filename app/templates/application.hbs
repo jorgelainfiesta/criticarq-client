@@ -1,6 +1,6 @@
 <header class="site-nav">
   <h1 class="logo">
-    {{#link-to 'index'}}CRITICarq.gt{{/link-to}}
+    {{#link-to 'home'}}CRITICarq.gt{{/link-to}}
   </h1>
   <nav>
     {{#each model.categories as |category|}}
@@ -12,3 +12,16 @@
 </header>
 
 {{outlet}}
+
+<footer class="site-footer">
+  <span class="copyright">
+    &copy; 2016 CRITICarq.gt
+  </span>
+  <nav>
+    {{#each model.categories as |category|}}
+      {{#link-to 'articles.category' category.slug activeClass=category.slug}}
+        {{category.name}}
+      {{/link-to}}
+    {{/each}}
+  </nav>
+</footer>

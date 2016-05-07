@@ -1,0 +1,36 @@
+.site-footer {
+  @include clearfix;
+  padding: unit-space(2) unit-space(2);
+  background: #fff;
+
+  .copyright {
+    float: left;
+    padding: 9px 0;
+    color: $header-text;
+  }
+
+  nav {
+    float: right;
+    font-family: $title-font;
+    letter-spacing: 3px;
+    -webkit-font-smoothing: antialiased;
+  	-moz-osx-font-smoothing: grayscale;
+
+    a {
+      color: $header-text;
+      text-transform: uppercase;
+      font-size: $header-links;
+      text-decoration: none;
+      padding: unit-space(0.5);
+      margin-left: unit-space(1);
+      display: inline-block;
+      line-height: 24px;
+
+      @each $category-slug, $category-color in $category-colors {
+        &.#{$category-slug} {
+            color: $category-color;
+        }
+      }
+    }
+  }
+}
