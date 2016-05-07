@@ -13,7 +13,7 @@ Router.map(function() {
       });
     });
   });
-  this.route('home');
+  this.route('home', { path: 'portada' });
 });
 
 export default Router;
