@@ -3,3 +3,15 @@
 {{#each model.article.contributors as |contributor|}}
   {{contributor-bio contributor=contributor}}
 {{/each}}
+
+<section class="article-comments">
+  <div class="article-disquss">
+    <h2>Unete a la discusión</h2>
+    {{disqus-comments identifier=model.article.slug}}
+  </div>
+</section>
+
+<section class="suggested-articles">
+  <h2>Más para estudiar</h2>
+  
+</section>

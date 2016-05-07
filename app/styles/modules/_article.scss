@@ -165,5 +165,21 @@
       }
     }
   }
+}
 
+.article-comments {
+  background: #F9F9F9;
+  color: #F9F9F9;
+  padding: unit-space(2) 0;
+  margin-top: unit-space(2);
+  overflow: hidden;
+  h2 {
+    @include sub-title;
+    color: #1a1a1a;
+  }
+}
+
+.article-disquss {
+  @include content-column;
+  @include body-copy;
 }

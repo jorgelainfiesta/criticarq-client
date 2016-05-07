@@ -1,11 +1,12 @@
 import Ember from 'ember';
+import ResetScrollTopMixin from 'criticarq-client/mixins/reset-scroll-top';
 
 const {
   RSVP,
   Route
 } = Ember;
 
-export default Route.extend({
+export default Route.extend(ResetScrollTopMixin, {
   model(params) {
     const filter = {
       category_name: params.category_slug
