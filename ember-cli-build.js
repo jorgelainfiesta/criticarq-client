@@ -41,7 +41,7 @@ module.exports = function(defaults) {
   // ].forEach(function(font) {
   //   var file = 'bower_components/font-awesome/fonts/' + font;
   //   app.import(file, { destDir: 'fonts' });
-  });
+  // });
 
   return app.toTree();
 };
