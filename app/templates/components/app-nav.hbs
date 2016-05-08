@@ -1,0 +1,10 @@
+<h1 class="logo">
+  {{#link-to 'home'}}CRITICarq.gt{{/link-to}}
+</h1>
+<nav>
+  {{#each categories as |category|}}
+    {{#link-to 'articles.category' category.slug activeClass=category.slug}}
+      {{category.name}}
+    {{/link-to}}
+  {{/each}}
+</nav>

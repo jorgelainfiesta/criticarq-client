@@ -4,6 +4,20 @@
   color: $header-text;
   padding: unit-space(1) unit-space(2);
 
+  &.fixed {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: $header-height;
+    box-sizing: border-box;
+    z-index: 10000;
+    transition: top 0.2s ease-in-out;
+
+    &.hide-nav {
+      top: -1 * $header-height;
+    }
+  }
+
   .logo {
     float: left;
     a {
