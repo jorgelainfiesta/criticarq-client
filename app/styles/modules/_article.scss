@@ -92,7 +92,15 @@
        font-size: 24px;
      }
     }
+    @include tablet {
+      .jssocials-share-whatsapp {
+        display: none;
+      }
+    }
     @include desktop {
+      .jssocials-share-whatsapp {
+        display: none;
+      }
       .jssocials-share {
         margin-left: 15px;
         .jssocials-share-logo {

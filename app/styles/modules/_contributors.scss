@@ -12,19 +12,37 @@
     padding: 0;
   }
   .photo {
-    position: absolute;
     width: 150px;
-    left: 0;
-    top: 30px;
     img {
       max-width: 100%;
       height: auto;
     }
   }
   .content {
-    padding-left: 200px;
     p {
       @include  caption-text;
     }
   }
+  @mixin contributorAvatarSide {
+    .photo {
+      position: absolute;
+      width: 150px;
+      left: 0;
+      top: 30px;
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+    }
+    .content {
+      padding-left: 200px;
+    }
+  }
+  @include tablet {
+    @include contributorAvatarSide;
+  }
+  @include desktop {
+    @include contributorAvatarSide;
+  }
+
 }

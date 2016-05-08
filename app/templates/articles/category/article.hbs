@@ -1,3 +1,5 @@
+{{title model.article.title}}
+
 {{article-single article=model.article category=model.category}}
 
 {{#each model.article.contributors as |contributor|}}
@@ -6,7 +8,7 @@
 
 <section class="article-comments">
   <div class="article-disquss">
-    <h2>Unete a la discusión</h2>
+    <h2>Únete a la discusión</h2>
     {{disqus-comments identifier=model.article.slug}}
   </div>
 </section>

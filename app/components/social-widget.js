@@ -4,7 +4,7 @@ export default Ember.Component.extend({
   didInsertElement() {
     const text = this.get('text');
     this.$().jsSocials({
-      shares: ['email', 'twitter', 'facebook', 'linkedin', 'pinterest', 'whatsapp'],
+      shares: ['email', 'twitter', 'facebook', 'linkedin', 'whatsapp'],
       text
     });
   }
