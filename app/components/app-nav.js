@@ -2,26 +2,35 @@ import Ember from 'ember';
 
 const {
   Component,
+  computed,
   run
 } = Ember;
 
 export default Component.extend({
   tagName: 'header',
   classNames: ['site-nav'],
-  classNameBindings: ['fixed', 'showHeader:hide-nav'],
+  classNameBindings: ['useFixed:fixed:static', 'showHeader:hide-nav'],
   headerHeight: 80,
   delta: 20,
   lastPosition: 0,
 
+  useFixed: computed('fixed', 'useHomeNav', {
+    get() {
+      return this.get('fixed') && !this.get('useHomeNav');
+    }
+  }),
+
   init() {
     this._super(...arguments);
-    window.onscroll = run.bind(this, this._checkScroll)
+    window.onscroll = run.bind(this, this._checkScroll);
   },
   willDestroyElement() {
     window.onscroll = null;
   },
   _checkScroll() {
-    run.throttle(this, this._addScrollClasses, 300);
+    if (!this.get('useHomeNav')) {
+      run.throttle(this, this._addScrollClasses, 300);
+    }
   },
   _addScrollClasses() {
     const currentPosition = window.scrollY;

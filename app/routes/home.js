@@ -7,6 +7,12 @@ const {
 } = Ember;
 
 export default Route.extend(ResetScrollTopMixin, {
+  activate() {
+    this.send('useHomeNav', true);
+  },
+  deactivate() {
+    this.send('useHomeNav', false);
+  },
   model() {
     const filter = {
       tag: 'home'

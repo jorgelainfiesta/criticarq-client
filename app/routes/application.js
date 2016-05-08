@@ -17,5 +17,11 @@ export default Route.extend({
     return RSVP.hash({
       categories
     });
+  },
+  actions: {
+    useHomeNav(value) {
+      console.log(value);
+      this.set('controller.useHomeNav', value);
+    }
   }
 });
