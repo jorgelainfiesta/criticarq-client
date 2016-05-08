@@ -7,7 +7,7 @@
 }
 
 .article-tile {
-  background-blend-mode: saturation;
+  background-blend-mode: darken;
   background-size: cover;
   background-position: center;
   padding: unit-space(2);
@@ -41,7 +41,7 @@
   }
   @each $category-slug, $category-color in $category-colors {
     &.category-#{$category-slug} {
-      background-color: rgba($category-color, 0.7);
+      background-color: rgba($category-color, 0.9);
     }
   }
 
@@ -53,15 +53,25 @@
       position: absolute;
       bottom: 0;
     }
-    &:nth-child(2n){
+    &:nth-child(4n){
+      width: 36.5%;
+    }
+    &:nth-child(4n+1) {
+      width: 36.5%;
+    }
+    &:nth-child(4n+2){
       width: 63.5%;
       border-left: 0;
       h3 {
         max-width: 63.5%;
       }
     }
-    &:nth-child(2n+1) {
-      width: 36.5%;
+    &:nth-child(4n+3) {
+      width: 63.5%;
+      border-right: 0;
+      h3 {
+        max-width: 63.5%;
+      }
     }
   }
 }

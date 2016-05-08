@@ -37,6 +37,7 @@
     "ember-disable-proxy-controllers": "^1.0.1",
     "ember-disqus": "0.2.0",
     "ember-export-application-global": "^1.0.4",
+    "ember-load": "0.0.8",
     "ember-metrics": "0.6.2",
     "ember-page-title": "3.0.1",
     "ember-resolver": "^2.0.3"
