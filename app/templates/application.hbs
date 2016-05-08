@@ -20,6 +20,9 @@
     &copy; 2016 CRITICarq.gt
   </span>
   <nav>
+    {{#link-to 'home'}}
+      Inicio
+    {{/link-to}}
     {{#each model.categories as |category|}}
       {{#link-to 'articles.category' category.slug activeClass=category.slug}}
         {{category.name}}
