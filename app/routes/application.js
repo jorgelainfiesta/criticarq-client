@@ -20,7 +20,6 @@ export default Route.extend({
   },
   actions: {
     useHomeNav(value) {
-      console.log(value);
       this.set('controller.useHomeNav', value);
     }
   }
