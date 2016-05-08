@@ -15,6 +15,21 @@
 
     &.hide-nav {
       top: -1 * $header-height;
+      nav {
+        top: -1 * ($header-height + 10);
+      }
+    }
+    @include tabletAndMobileOnly {
+      nav {
+        position: fixed;
+        transition: top 0.2s ease-in-out;
+        top: $header-height;
+        left: 0;
+        width: 100%;
+        background: rgba(0,0,0,0.8);
+        box-shadow: 0 0 10px rgba(0,0,0,0.5);
+        text-align: center;
+      }
     }
   }
 

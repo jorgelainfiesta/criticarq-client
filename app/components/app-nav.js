@@ -10,7 +10,7 @@ export default Component.extend({
   classNames: ['site-nav'],
   classNameBindings: ['fixed', 'showHeader:hide-nav'],
   headerHeight: 80,
-  delta: 10,
+  delta: 20,
   lastPosition: 0,
 
   init() {
@@ -21,7 +21,7 @@ export default Component.extend({
     window.onscroll = null;
   },
   _checkScroll() {
-    run.throttle(this, this._addScrollClasses, 200);
+    run.throttle(this, this._addScrollClasses, 300);
   },
   _addScrollClasses() {
     const currentPosition = window.scrollY;
