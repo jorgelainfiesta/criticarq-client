@@ -1,9 +1,7 @@
 .site-nav {
-  @include clearfix;
   background: $header-background;
   color: $header-text;
   padding: unit-space(1) unit-space(2);
-  width: 100%;
   height: $header-height;
   box-sizing: border-box;
   z-index: 10000;
@@ -11,7 +9,9 @@
   &.fixed {
     position: fixed;
     top: 0;
+    right: 0;
     transition: top 0.2s ease-in-out;
+    width: 100%;
 
     &.hide-nav {
       top: -1 * $header-height;
@@ -22,10 +22,10 @@
     @include tabletAndMobileOnly {
       nav {
         position: fixed;
+        width: 100%;
         transition: top 0.2s ease-in-out;
         top: $header-height;
         left: 0;
-        width: 100%;
         background: rgba(0,0,0,0.8);
         box-shadow: 0 0 10px rgba(0,0,0,0.5);
         text-align: center;
@@ -42,9 +42,13 @@
         }
       }
     }
+    @include desktop {
+      @include clearfix;
+    }
   }
   &.static {
     position: absolute;
+    width: 100%;
     top: 0;
     left: 0;
     @include tabletAndMobileOnly {

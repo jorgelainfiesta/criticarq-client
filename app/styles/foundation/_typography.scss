@@ -38,6 +38,20 @@
   margin: unit-space(1) 0;
 }
 
+@mixin break-words {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  -ms-word-break: break-all;
+  word-break: break-all;
+  word-break: break-word;
+
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
 @function unit-space($amount) {
   @return $amount * 18px;
 }
