@@ -9,7 +9,6 @@ const {
 export default Ember.Component.extend({
   classNames: ['article-tile'],
   classNameBindings: ['categoryClass'],
-  attributeBindings: ['style'],
 
   router: service('-routing'),
 
