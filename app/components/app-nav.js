@@ -11,7 +11,7 @@ export default Component.extend({
   classNames: ['site-nav'],
   classNameBindings: ['useFixed:fixed:static', 'showHeader:hide-nav'],
   headerHeight: 80,
-  delta: 20,
+  delta: 5,
   lastPosition: 0,
 
   useFixed: computed('fixed', 'useHomeNav', {
@@ -29,7 +29,7 @@ export default Component.extend({
   },
   _checkScroll() {
     if (!this.get('useHomeNav')) {
-      run.throttle(this, this._addScrollClasses, 300);
+      run.throttle(this, this._addScrollClasses, 150);
     }
   },
   _addScrollClasses() {

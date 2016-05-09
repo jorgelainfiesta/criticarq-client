@@ -4,13 +4,13 @@
   background: #fff;
 
   .copyright {
-    float: left;
     padding: 9px 0;
+    margin: 0;
     color: $header-text;
+    text-align: center;
   }
 
   nav {
-    float: right;
     font-family: $title-font;
     letter-spacing: 3px;
     -webkit-font-smoothing: antialiased;
@@ -31,6 +31,29 @@
             color: $category-color;
         }
       }
+    }
+  }
+
+  @include mobileOnly {
+    nav a {
+      display: block;
+      text-align: center;
+    }
+  }
+
+  @include tabletAndMobileOnly {
+    .copyright {
+      margin-top: unit-space(1);
+    }
+  }
+
+  @include desktop {
+    nav {
+      float: right;
+    }
+    .copyright {
+      float: left;
+      text-align: left;
     }
   }
 }
