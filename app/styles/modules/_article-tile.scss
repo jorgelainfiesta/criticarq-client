@@ -54,7 +54,7 @@
   }
   @each $category-slug, $category-color in $category-colors {
     &.category-#{$category-slug} {
-      background-color: rgba($category-color, 0.7);
+      background-color: rgba($category-color, 0.5);
     }
   }
 
