@@ -91,6 +91,12 @@
             color: $category-color;
         }
       }
+
+      @include desktop {
+        .social-label {
+            display: none;
+        }
+      }
     }
   }
 }
