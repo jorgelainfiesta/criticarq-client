@@ -69,13 +69,13 @@ export default Component.extend({
   },
   _closeNav() {
     if (isPresent($)) {
-      $('body').removeClass('menu-open')
+      $('body').removeClass('menu-open');
     }
     this.set('isMobileOpen', false);
   },
   _openNav() {
     if (isPresent($)) {
-      $('body').addClass('menu-open')
+      $('body').addClass('menu-open');
     }
     this.set('isMobileOpen', true);
   }
