@@ -10,11 +10,8 @@ const {
 export default Route.extend(ResetScrollTopMixin, {
   model(params) {
     const { category } = this.modelFor('articles.category');
-    const filter = {
-      slug: params.article_slug
-    };
     const article = this.store.query('article', {
-      filter
+      slug: params.article_slug
     })
     .then((articles) => {
       return get(articles, 'firstObject');
