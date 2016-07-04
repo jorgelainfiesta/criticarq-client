@@ -1,8 +1,10 @@
 import Ember from 'ember';
 
 const {
+  $,
   Component,
   computed,
+  isPresent,
   run
 } = Ember;
 
@@ -13,6 +15,7 @@ export default Component.extend({
   headerHeight: 80,
   delta: 5,
   lastPosition: 0,
+  isMobileOpen: false,
 
   useFixed: computed('fixed', 'useHomeNav', {
     get() {
@@ -48,5 +51,32 @@ export default Component.extend({
       this.set('showHeader', false);
     }
     this.set('lastPosition', currentPosition);
+  },
+
+  actions: {
+    toggleNav() {
+      if (!this.get('isMobileOpen')) {
+        this._openNav();
+      } else {
+        this._closeNav();
+      }
+    }
+  },
+  click() {
+    if (this.get('isMobileOpen')) {
+      this._closeNav();
+    }
+  },
+  _closeNav() {
+    if (isPresent($)) {
+      $('body').removeClass('menu-open')
+    }
+    this.set('isMobileOpen', false);
+  },
+  _openNav() {
+    if (isPresent($)) {
+      $('body').addClass('menu-open')
+    }
+    this.set('isMobileOpen', true);
   }
 });
