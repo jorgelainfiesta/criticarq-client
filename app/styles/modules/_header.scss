@@ -1,3 +1,8 @@
+body {
+  &.menu-open {
+    overflow: hidden;
+  }
+}
 .site-nav {
   background: $header-background;
   color: $header-text;
@@ -25,20 +30,21 @@
         width: 100%;
         transition: top 0.2s ease-in-out;
         top: $header-height;
-        left: 0;
+        right: 0;
         background: rgba(0,0,0,0.8);
         box-shadow: 0 0 10px rgba(0,0,0,0.5);
         text-align: center;
         box-sizing: border-box;
-      }
-    }
-    @include mobileOnly {
-      nav {
+        max-width: 450px;
+        height: 100%;
+        &.closed-mobile {
+          display: none;
+        }
         a {
-          display: inline-block;
-          width: 50%;
-          margin: 0;
-          box-sizing: border-box;
+          display: block;
+          padding: unit-space(1) 0;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+          margin: 0 unit-space(1);
         }
       }
     }
@@ -52,7 +58,7 @@
     top: 0;
     left: 0;
     @include tabletAndMobileOnly {
-      nav {
+      nav, .show-mobile-button {
         display: none;
       }
     }
@@ -67,6 +73,29 @@
       display: inline-block;
       width: 178px;
       height: 41px;
+    }
+  }
+  .sub-title {
+    position: absolute;
+    top: -500px;
+  }
+  .show-mobile-button {
+    display: block;
+    border: none;
+    background: none;
+    color: $header-text;
+    font-size: 20px;
+    text-decoration: none;
+    float: right;
+    margin-top: 8px;
+    cursor: pointer;
+    outline: none;
+    .explanation-button {
+      display: none;
+    }
+
+    @include desktop {
+      display: none;
     }
   }
   nav {
@@ -89,6 +118,12 @@
       @each $category-slug, $category-color in $category-colors {
         &.#{$category-slug} {
             color: $category-color;
+        }
+      }
+
+      @include desktop {
+        .social-label {
+            display: none;
         }
       }
     }

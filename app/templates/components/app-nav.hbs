@@ -1,10 +1,37 @@
 <h1 class="logo">
   {{#link-to 'home'}}CRITICarq.gt{{/link-to}}
 </h1>
-<nav>
+<h2 class="sub-title">
+  Conectando los puntos entre la arquitectura a nivel académico, iniciativa privada y pública.
+</h2>
+
+<nav class="{{if isMobileOpen 'open-mobile' 'closed-mobile'}}">
   {{#each categories as |category|}}
     {{#link-to 'articles.category' category.slug activeClass=category.slug}}
       {{category.name}}
     {{/link-to}}
   {{/each}}
+  <a href="https://www.facebook.com/criticarq/" target="_blank">
+    <i class="fa fa-facebook"></i>
+    <span class="social-label">Facebook</span>
+  </a>
+  <a href="https://www.instagram.com/criticarq.gt/" target="_blank">
+    <i class="fa fa-instagram"></i>
+    <span class="social-label">Instagram</span>
+  </a>
+  <a href="https://www.pinterest.com/criticarq/" target="_blank">
+    <i class="fa fa-pinterest"></i>
+    <span class="social-label">Pinterest</span>
+  </a>
 </nav>
+
+<button type="button" name="button" class="show-mobile-button" onclick={{action (action 'toggleNav')}}>
+  <span class="explanation-button">
+    Toggle mobile menu.
+  </span>
+  {{#if isMobileOpen}}
+    <i class="fa fa-close"></i>
+  {{else}}
+    <i class="fa fa-bars"></i>
+  {{/if}}
+</button>

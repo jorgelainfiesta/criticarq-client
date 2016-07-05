@@ -7,7 +7,7 @@ const {
 } = Ember;
 
 export default Route.extend({
-  model(params) {
+  model() {
     const { category } = this.modelFor('articles.category');
     const articles = this.store.query('article', {
       filter: {
