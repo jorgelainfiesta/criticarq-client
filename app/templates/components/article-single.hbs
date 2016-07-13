@@ -1,5 +1,5 @@
 <header>
-  {{lazy-image url=article.featured.url alt=article.title}}
+  <img src="{{article.featured.url}}" alt="{{article.title}}" />
 </header>
 
 <article class="article-read">
@@ -18,11 +18,11 @@
     {{{article.excerpt}}}
   </div>
   {{#unless preview}}
-    {{social-widget text=article.socialText}}
+    {{social-widget text=article.socialText image=article.featured.url}}
     <div class="article-content">
       {{{article.content}}}
     </div>
-    {{social-widget text=article.socialText}}
+    {{social-widget text=article.socialText image=article.featured.url}}
   {{/unless}}
 
   {{#if preview}}
