@@ -1,3 +1,11 @@
-{{#each model.articles as |article|}}
-  {{article-single article=article category=model.category preview=true}}
-{{/each}}
+{{#infinite-scroller on-load-more=(perform loadMore) use-document=true trigger-at='70%'}}
+  {{#each model.articles as |article|}}
+    {{article-single article=article category=model.category preview=true}}
+  {{/each}}
+
+  {{#unless loadMore.isIdle}}
+    <div class="loading-posts">
+      <span class="signal-loader"></span>
+    </div>
+  {{/unless}}
+{{/infinite-scroller}}

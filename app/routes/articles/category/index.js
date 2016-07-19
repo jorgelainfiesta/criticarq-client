@@ -11,7 +11,9 @@ export default Route.extend({
     const { category } = this.modelFor('articles.category');
     const articles = this.store.query('article', {
       filter: {
-        category_name: get(category, 'slug')
+        category_name: get(category, 'slug'),
+        paged: 1,
+        posts_per_page: 4
       }
     });
 
@@ -19,5 +21,11 @@ export default Route.extend({
       category,
       articles
     });
+  },
+
+  setupController(controller, model) {
+    controller.totalPages = get(model, 'meta.totalPages');
+    controller.page = 1;
+    this._super(...arguments);
   }
 });

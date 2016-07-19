@@ -58,7 +58,7 @@ module.exports = function(environment) {
         name: 'GoogleAnalytics',
         environments: ['production'],
         config: {
-          id: process.env.GA_ID
+          id: 'UA-77428422-1'
         }
       }
     ];

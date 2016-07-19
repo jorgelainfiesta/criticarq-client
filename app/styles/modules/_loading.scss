@@ -14,6 +14,14 @@
     border-color: #1a1a1a;
   }
 }
+.loading-posts {
+  position: relative;
+  text-align: center;
+  .signal-loader  {
+    position: static;
+    display: inline-block;
+  }
+}
 .signal-loader {
   border: 5px solid #333;
   border-radius: 30px;
