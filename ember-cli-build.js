@@ -5,7 +5,7 @@ var EmberApp = require('ember-cli/lib/broccoli/ember-app');
 module.exports = function(defaults) {
   var app = new EmberApp(defaults, {
     fingerprint: {
-      prepend: 'http://assets.criticarq.gt/'
+      prepend: 'https://storage.googleapis.com/criticarq-assets/'
     }
   });
 
