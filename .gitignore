@@ -16,5 +16,4 @@
 npm-debug.log
 testem.log
 
-/config/*
 .env

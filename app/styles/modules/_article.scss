@@ -82,7 +82,7 @@
   .article-author {
     @include sub-title;
   }
-  .jssocials {
+  .social-sharer {
     @include sub-title;
     font-size: 20px;
     padding: unit-space(0.25) 0;
@@ -91,35 +91,42 @@
     border-width: 1px 0;
     text-align: center;
 
-    .jssocials-share {
-      margin-left: 30px;
-      &:first-child {
-        margin-left: 0;
+    li {
+      display: inline-block;
+      a {
+        text-decoration: none;
+        color: #999;
+        padding: 6px 12px;
+        display: inline-block;
+        span {
+          font-size: 16px;
+        }
       }
-     .jssocials-share-logo {
-       font-size: 24px;
-     }
+      @each $social-slug, $social-color in $social-colors {
+        &.link-#{$social-slug} {
+          a {
+            color: $social-color;
+          }
+        }
+      }
+    }
+    @include mobileOnly {
+      li a span {
+        display: none;
+      }
     }
     @include tablet {
-      .jssocials-share-whatsapp {
+      .link-whatsapp {
         display: none;
       }
     }
     @include desktop {
-      .jssocials-share-whatsapp {
+      .link-whatsapp {
         display: none;
-      }
-      .jssocials-share {
-        margin-left: 15px;
-        .jssocials-share-logo {
-          font-size: 18px;
-        }
-        .jssocials-share-label {
-          font-size: 16px;
-        }
       }
     }
   }
+
   .read-more {
     @include sub-title;
     text-decoration: none;

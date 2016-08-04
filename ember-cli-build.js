@@ -5,7 +5,7 @@ var EmberApp = require('ember-cli/lib/broccoli/ember-app');
 module.exports = function(defaults) {
   var app = new EmberApp(defaults, {
     fingerprint: {
-      prepend: 'http://assets.criticarq.gt/'
+      prepend: 'https://storage.googleapis.com/criticarq-assets/'
     }
   });
 
@@ -21,10 +21,6 @@ module.exports = function(defaults) {
   // modules that you would like to import into your application
   // please specify an object with the list of modules as keys
   // along with the exports of each module as its value.
-
-  app.import('bower_components/jssocials/dist/jssocials.js');
-  app.import('bower_components/jssocials/dist/jssocials.css');
-  app.import('bower_components/jssocials/dist/jssocials-theme-minima.css');
 
   // app.import({
   //   development: 'bower_components/font-awesome/css/font-awesome.css',

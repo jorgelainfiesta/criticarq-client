@@ -4,6 +4,8 @@ const {
   $,
   Component,
   computed,
+  get,
+  inject: { service },
   isPresent,
   run
 } = Ember;
@@ -17,6 +19,8 @@ export default Component.extend({
   lastPosition: 0,
   isMobileOpen: false,
 
+  fastboot: service(),
+
   useFixed: computed('fixed', 'useHomeNav', {
     get() {
       return this.get('fixed') && !this.get('useHomeNav');
@@ -25,7 +29,10 @@ export default Component.extend({
 
   init() {
     this._super(...arguments);
-    window.onscroll = run.bind(this, this._checkScroll);
+    let fastboot = this.get('fastboot');
+    if (!get(fastboot, 'isFastBoot')) {
+      window.onscroll = run.bind(this, this._checkScroll);
+    }
   },
   willDestroyElement() {
     window.onscroll = null;
