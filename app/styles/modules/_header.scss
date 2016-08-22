@@ -6,73 +6,70 @@ body {
 .site-nav {
   background: $header-background;
   color: $header-text;
-  padding: unit-space(1) unit-space(2);
   height: $header-height;
   box-sizing: border-box;
   z-index: 10000;
 
-  &.fixed {
-    position: fixed;
-    top: 0;
-    right: 0;
-    transition: top 0.2s ease-in-out;
-    width: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  transition: top 0.2s ease-in-out;
+  width: 100%;
 
-    &.hide-nav {
-      top: -1 * $header-height;
-      nav {
-        top: -1 * ($header-height + 10);
-      }
-    }
-    @include tabletAndMobileOnly {
-      nav {
-        position: fixed;
-        width: 100%;
-        transition: top 0.2s ease-in-out;
-        top: $header-height;
-        right: 0;
-        background: rgba(0,0,0,0.8);
-        box-shadow: 0 0 10px rgba(0,0,0,0.5);
-        text-align: center;
-        box-sizing: border-box;
-        max-width: 450px;
-        height: 100%;
-        &.closed-mobile {
-          display: none;
-        }
-        a {
-          display: block;
-          padding: unit-space(1) 0;
-          border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-          margin: 0 unit-space(1);
-        }
-      }
-    }
-    @include desktop {
-      @include clearfix;
+  .menu-wrap {
+    @include site-column;
+  }
+  .hamburger {
+    float: right;
+  }
+
+  &.hide-nav {
+    top: -1 * $header-height;
+    nav {
+      top: -1 * ($header-height + 10);
     }
   }
-  &.static {
-    position: absolute;
-    width: 100%;
-    top: 0;
-    left: 0;
-    @include tabletAndMobileOnly {
-      nav, .show-mobile-button {
+  @include mobileOnly {
+    nav {
+      position: fixed;
+      width: 100%;
+      transition: top 0.2s ease-in-out;
+      top: $header-height;
+      right: 0;
+      background: rgba(0,0,0,0.8);
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+      text-align: center;
+      box-sizing: border-box;
+      max-width: 450px;
+      height: 100%;
+      &.closed-mobile {
         display: none;
       }
+      a {
+        display: block;
+        padding: unit-space(1) 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        margin: 0 unit-space(1);
+      }
+    }
+  }
+  @include desktop {
+    @include clearfix;
+    .hamburger {
+      display: none;
     }
   }
 
   .logo {
     float: left;
     a {
-      background: url(images/logo.svg) no-repeat;
+      background: url(images/logo.svg) no-repeat center center;
+      background-size: 127px 28px;
       text-indent: 1000px;
       overflow: hidden;
       display: inline-block;
-      width: 178px;
-      height: 41px;
+      width: 127px;
+      height: $header-height;
     }
   }
   .sub-title {
@@ -104,16 +101,15 @@ body {
     letter-spacing: 3px;
     -webkit-font-smoothing: antialiased;
   	-moz-osx-font-smoothing: grayscale;
+    font-weight: normal;
 
     a {
       color: $header-text;
       text-transform: uppercase;
       font-size: $header-links;
       text-decoration: none;
-      padding: unit-space(0.5);
       margin-left: unit-space(1);
       display: inline-block;
-      line-height: 24px;
 
       @each $category-slug, $category-color in $category-colors {
         &.#{$category-slug} {
@@ -122,6 +118,9 @@ body {
       }
 
       @include desktop {
+        height: $header-height;
+        line-height: $header-height;
+
         .social-label {
             display: none;
         }

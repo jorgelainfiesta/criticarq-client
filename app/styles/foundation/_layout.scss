@@ -10,6 +10,18 @@
   }
 }
 
+@mixin site-column() {
+  margin: 0 unit-space(1);
+  @include tablet {
+    margin: 0 unit-space(2);
+  }
+  @include desktop {
+    max-width: $site-column-width;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
 @mixin clearfix() {
   &:after {
     content: "";
