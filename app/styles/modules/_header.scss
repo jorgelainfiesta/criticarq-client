@@ -21,42 +21,95 @@ body {
   }
   .hamburger {
     float: right;
+    outline: none;
   }
 
-  &.hide-nav {
-    top: -1 * $header-height;
-    nav {
-      top: -1 * ($header-height + 10);
+  nav {
+    position: fixed;
+    width: 100%;
+    transition: top 0.2s ease-in-out;
+    top: $header-height;
+    right: 0;
+    background: rgba(0,0,0,0.8);
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    text-align: center;
+    box-sizing: border-box;
+    // max-width: 450px;
+    height: 100%;
+    padding-top: 20px;
+
+    font-family: $title-font;
+    letter-spacing: 3px;
+    -webkit-font-smoothing: antialiased;
+  	-moz-osx-font-smoothing: grayscale;
+    font-weight: normal;
+
+    &.closed-mobile {
+      display: none;
     }
-  }
-  @include mobileOnly {
-    nav {
-      position: fixed;
-      width: 100%;
-      transition: top 0.2s ease-in-out;
-      top: $header-height;
-      right: 0;
-      background: rgba(0,0,0,0.8);
-      box-shadow: 0 0 10px rgba(0,0,0,0.5);
-      text-align: center;
-      box-sizing: border-box;
-      max-width: 450px;
-      height: 100%;
-      &.closed-mobile {
-        display: none;
+
+    a {
+      color: $header-text;
+      text-transform: uppercase;
+      font-size: 14px;
+      text-decoration: none;
+      display: block;
+      padding: unit-space(1) 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      margin: 0 unit-space(1);
+
+      @each $category-slug, $category-color in $category-colors {
+        &.#{$category-slug} {
+            color: $category-color;
+        }
       }
+    }
+    .global-social {
       a {
+        display: inline-block;
+      }
+    }
+    .social-label {
+      display: none;
+    }
+    @include mobileOnly {
+      animation-name: fadeInDown;
+    }
+    @include tablet {
+      animation-name: slideInRight;
+      max-width: 400px;
+    }
+    @include desktop {
+      position: static;
+      background: none;
+      box-shadow: none;
+      display: block;
+      padding: 0;
+      text-align: right;
+      height: $header-height;
+      line-height: $header-height;
+      max-width: 100%;
+
+      a {
+        display: inline-block;
+        border: none;
+        padding: 0;
+        margin-left: 0;
+        font-size: 12px;
+      }
+      &.closed-mobile {
         display: block;
-        padding: unit-space(1) 0;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-        margin: 0 unit-space(1);
       }
     }
   }
+
   @include desktop {
     @include clearfix;
     .hamburger {
       display: none;
+    }
+    .global-social {
+      float: right;
     }
   }
 
@@ -75,56 +128,5 @@ body {
   .sub-title {
     position: absolute;
     top: -500px;
-  }
-  .show-mobile-button {
-    display: block;
-    border: none;
-    background: none;
-    color: $header-text;
-    font-size: 20px;
-    text-decoration: none;
-    float: right;
-    margin-top: 8px;
-    cursor: pointer;
-    outline: none;
-    .explanation-button {
-      display: none;
-    }
-
-    @include desktop {
-      display: none;
-    }
-  }
-  nav {
-    float: right;
-    font-family: $title-font;
-    letter-spacing: 3px;
-    -webkit-font-smoothing: antialiased;
-  	-moz-osx-font-smoothing: grayscale;
-    font-weight: normal;
-
-    a {
-      color: $header-text;
-      text-transform: uppercase;
-      font-size: $header-links;
-      text-decoration: none;
-      margin-left: unit-space(1);
-      display: inline-block;
-
-      @each $category-slug, $category-color in $category-colors {
-        &.#{$category-slug} {
-            color: $category-color;
-        }
-      }
-
-      @include desktop {
-        height: $header-height;
-        line-height: $header-height;
-
-        .social-label {
-            display: none;
-        }
-      }
-    }
   }
 }
