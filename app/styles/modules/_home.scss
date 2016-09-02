@@ -1,7 +1,14 @@
 .home-tiles {
-  &.articles-tiles-grid  {
-    @include desktop() {
-      height: 88.5vh;
+  @include site-column;
+  padding-top: 1rem;
+  .article-tile {
+    &:first-child {
+      width: 100%;
+      height: 60vh;
+      padding: 0 0 1rem 0;
+    }
+    &:nth-child(even) {
+      padding-right: 1rem;
     }
   }
 }

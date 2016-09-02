@@ -1,11 +1,17 @@
-{{#infinite-scroller on-load-more=(perform loadMore) use-document=true trigger-at='70%'}}
-  {{#each model.articles as |article|}}
-    {{article-single article=article category=model.category preview=true}}
-  {{/each}}
+<section class="category-index {{category-class model.category.slug}}">
+  <h2>{{model.category.name}}</h2>
 
-  {{#unless loadMore.isIdle}}
-    <div class="loading-posts">
-      <span class="signal-loader"></span>
+  {{#infinite-scroller on-load-more=(perform loadMore) use-document=true trigger-at='70%'}}
+    <div class="articles-tiles-grid">
+      {{#each model.articles as |article|}}
+        {{article-tile article=article category=model.category class=(category-class model.category.slug)}}
+      {{/each}}
     </div>
-  {{/unless}}
-{{/infinite-scroller}}
+
+    {{#unless loadMore.isIdle}}
+      <div class="loading-posts">
+        <span class="signal-loader"></span>
+      </div>
+    {{/unless}}
+  {{/infinite-scroller}}
+</section>

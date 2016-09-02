@@ -1,12 +1,11 @@
-<div class="image-background" style={{style}}>
+<div class="image-preview" style="{{background-image article.featured.medium.url}}">
+  <img src="{{article.featured.medium.url}}" alt="{{article.title}}" />
 </div>
-
 <h3 class="article-title">
   {{#link-to 'articles.category.article' category.slug article.slug}}
-    {{article.title}}
+    <strong>{{article.title}}</strong>
   {{/link-to}}
 </h3>
 <h4 class="article-author">
   {{contributors-names article.contributors}}
 </h4>
-{{category-label category=category}}

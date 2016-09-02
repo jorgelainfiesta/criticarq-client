@@ -1,5 +1,8 @@
 <div class="articles-tiles-grid home-tiles">
   {{#each model.articles as |article|}}
-    {{article-tile article=article}}
+    {{log article.categories.firstObject.slug}}
+    {{#with article.categories.firstObject as |category|}}
+      {{article-tile article=article category=category class=(category-class category.slug)}}
+    {{/with}}
   {{/each}}
 </div>

@@ -1,5 +1,5 @@
 .articles-tiles-grid {
-  @include desktop() {
+  @include tablet() {
     display: flex;
     flex-wrap: wrap;
     align-items: stretch;
@@ -7,41 +7,102 @@
 }
 
 .article-tile {
-  background-blend-mode: darken;
-  background-size: cover;
-  background-position: center;
-  padding: unit-space(2);
-  border-color: #fff;
-  border-style: solid;
-  border-width: 5px 5px 0 5px;
   position: relative;
   box-sizing: border-box;
-  position: relative;
+  border-bottom: 3rem;
 
-  .image-background {
-    display: block;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    background-size: cover;
-    background-position: center;
+  .image-preview {
+    img {
+      max-width: 100%;
+    }
   }
 
-  h3, h3 a {
-    @include large-title();
-    font-size: $tile-title;
-    line-height: $tile-title;
-    color: #fff;
+  h3 a {
+    font-family: $title-font;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 25px;
+    color: #000;
     margin: 0;
     text-decoration: none;
+    border-bottom: 1px solid #fff;
   }
   h4 {
-    @include sub-title;
-    color: #fff;
-    border-color: #fff;
+    font-family: $title-font;
+    font-weight: bold;
+    border-left: 2px solid gray;
+    padding: 4.5px 9px;
+    margin: 9px 0 2rem 0;
+    font-size: 12px;
+    color: gray;
+  }
+  @include tablet {
+    width: 50%;
+    height: 50vh;
+    min-height: 250px;
+    overflow: hidden;
+    padding-bottom: 1rem;
+
+    &:nth-child(odd) {
+      padding-right: 1rem;
+    }
+
+    .image-preview {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background-size: cover;
+      background-position: center center;
+
+      img {
+        position: absolute;
+        top: -1000px;
+      }
+    }
+
+    h3 {
+      position: absolute;
+      top: 3rem;
+      left: 1rem;
+      max-width: 80%;
+      box-sizing: border-box;
+      line-height: 1.3;
+      padding: 3px 0;
+      border-width: 0 0 0 20px;
+      border-left-style: solid;
+      a {
+        border: none;
+        padding: 4px 0;
+        color: #fff;
+        display: inline;
+        margin: 0;
+
+        strong {
+          position: relative;
+          left: -10px;
+        }
+      }
+    }
+    h4 {
+      position: absolute;
+      color: #fff;
+      border-color: #fff;
+      bottom: 0;
+      left: 1rem;
+    }
+  }
+  @include desktop {
+    h3 {
+      font-size: 24px;
+      padding: 6px 0;
+      a {
+        font-size: 24px;
+        padding: 5px 0;
+      }
+    }
+    h4 {
+      font-size: 18px;
+    }
   }
   .category-label {
     position: absolute;
@@ -54,36 +115,16 @@
   }
   @each $category-slug, $category-color in $category-colors {
     &.category-#{$category-slug} {
-      background-color: rgba($category-color, 0.5);
-    }
-  }
-
-  @include desktop() {
-    h3 {
-      margin-bottom: unit-space(3);
-    }
-    .article-author {
-      position: absolute;
-      bottom: 0;
-    }
-    &:nth-child(4n){
-      width: 36.5%;
-    }
-    &:nth-child(4n+1) {
-      width: 36.5%;
-    }
-    &:nth-child(4n+2){
-      width: 63.5%;
-      border-left: 0;
-      h3 {
-        max-width: 63.5%;
+      h3 a {
+        border-color: $category-color;
       }
-    }
-    &:nth-child(4n+3) {
-      width: 63.5%;
-      border-right: 0;
-      h3 {
-        max-width: 63.5%;
+      @include tablet {
+        h3 {
+          border-color: rgba($category-color, 0.8);
+          a {
+            background-color: rgba($category-color, 0.8);
+          }
+        }
       }
     }
   }
