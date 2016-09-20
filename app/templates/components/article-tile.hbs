@@ -6,6 +6,8 @@
     <strong>{{article.title}}</strong>
   {{/link-to}}
 </h3>
+{{#unless noContributor}}
 <h4 class="article-author">
   {{contributors-names article.contributors}}
 </h4>
+{{/unless}}

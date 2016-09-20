@@ -1,9 +1,9 @@
-import Ember from 'ember';
+import SocialLinkHelper from './build-social-link';
 
-export function buildWhatsappLink([title]) {
-  let url = document.URL;
-  let link = `whatsapp://send?text=${title} ${url}`;
-  return link;
-}
-
-export default Ember.Helper.helper(buildWhatsappLink);
+export default SocialLinkHelper.extend({
+  compute([title]) {
+    let url = this.get('currentUrl');
+    let link = `whatsapp://send?text=${title} ${url}`;
+    return link;
+  }
+});
