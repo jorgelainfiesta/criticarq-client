@@ -8,9 +8,18 @@
 
   <nav class="{{if isMobileOpen 'open-mobile animated' 'closed-mobile'}}">
     {{#each categories as |category|}}
-      {{#link-to 'articles.category' category.slug activeClass=category.slug}}
-        {{category.name}}
-      {{/link-to}}
+      {{#if media.isDesktop}}
+        {{#link-to 'articles.category' category.slug activeClass=category.slug}}
+          {{category.name}}
+        {{/link-to}}
+      {{else}}
+        <span {{action 'toggleNav'}}>
+          {{#link-to 'articles.category' category.slug activeClass=category.slug}}
+            {{category.name}}
+          {{/link-to}}
+        </span>
+      {{/if}}
+
     {{/each}}
     <div class="global-social">
       <a href="https://www.facebook.com/criticarq/" target="_blank">
@@ -21,10 +30,6 @@
         <i class="fa fa-instagram"></i>
         <span class="social-label">Instagram</span>
       </a>
-      {{!--<a href="https://www.pinterest.com/criticarq/" target="_blank">
-        <i class="fa fa-pinterest"></i>
-        <span class="social-label">Pinterest</span>
-      </a>--}}
     </div>
   </nav>
 

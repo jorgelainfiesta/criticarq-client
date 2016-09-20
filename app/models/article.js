@@ -13,5 +13,6 @@ export default Model.extend({
 
   contributors: hasMany(),
   categories: hasMany(),
+  tags: hasMany(),
   related: hasMany('article', { inverse: null })
 });

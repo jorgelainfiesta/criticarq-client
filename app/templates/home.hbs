@@ -1,8 +1,38 @@
 <div class="articles-tiles-grid home-tiles">
-  {{#each model.articles as |article|}}
-    {{log article.categories.firstObject.slug}}
-    {{#with article.categories.firstObject as |category|}}
-      {{article-tile article=article category=category class=(category-class category.slug)}}
-    {{/with}}
-  {{/each}}
+  {{#swiper-container pagination=true autoplay=4000}}
+    {{#each model.featured as |article|}}
+      {{#with article.categories.firstObject as |category|}}
+        {{#swiper-slide}}
+          {{article-tile
+              article=article
+              category=category
+              useLargeImage=true
+              class=(category-class article.categories.firstObject.slug)
+          }}
+        {{/swiper-slide}}
+      {{/with}}
+    {{/each}}
+  {{/swiper-container}}
+</div>
+
+<div class="category-index">
+  {{#infinite-scroller on-load-more=(perform loadMore) use-document=true trigger-at='70%'}}
+    <div class="articles-tiles-grid">
+      {{#each model.articles as |article|}}
+        {{#unless (in-home article.tags)}}
+          {{article-tile
+              article=article
+              category=article.categories.firstObject
+              class=(category-class article.categories.firstObject.slug)
+          }}
+        {{/unless}}
+      {{/each}}
+    </div>
+
+    {{#unless loadMore.isIdle}}
+      <div class="loading-posts">
+        <span class="signal-loader"></span>
+      </div>
+    {{/unless}}
+  {{/infinite-scroller}}
 </div>

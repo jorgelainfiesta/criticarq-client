@@ -1,4 +1,4 @@
-<div class="image-preview" style="{{background-image article.featured.medium.url}}">
+<div class="image-preview" style="{{background-image (if useLargeImage article.featured.large.url article.featured.medium.url)}}">
   <img src="{{article.featured.medium.url}}" alt="{{article.title}}" />
 </div>
 <h3 class="article-title">

@@ -20,6 +20,7 @@ export default Component.extend({
   isMobileOpen: false,
 
   fastboot: service(),
+  media: service(),
 
   useFixed: computed('fixed', 'useHomeNav', {
     get() {
