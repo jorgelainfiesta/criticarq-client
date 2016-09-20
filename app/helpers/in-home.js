@@ -3,7 +3,7 @@ const { get } = Ember;
 
 export function inHome([postTags]) {
   return postTags.any((tag) => {
-    return get(tag, 'id') === 6;
+    return parseInt(get(tag, 'id')) === 6;
   });
 }
 
