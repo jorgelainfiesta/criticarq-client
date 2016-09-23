@@ -1,9 +1,9 @@
-import Ember from 'ember';
+import SocialLinkHelper from './build-social-link';
 
-export function buildTwitterLink([title]) {
-  let url = document.URL;
-  let link = `https://twitter.com/intent/tweet?text='${title}'&amp;url='${url}`;
-  return link;
-}
-
-export default Ember.Helper.helper(buildTwitterLink);
+export default SocialLinkHelper.extend({
+  compute([title]) {
+    let url = this.get('currentUrl');
+    let link = `https://twitter.com/intent/tweet?text='${title} ${url}`;
+    return link;
+  }
+});

@@ -19,7 +19,7 @@
     a {
       color: $header-text;
       text-transform: uppercase;
-      font-size: $header-links;
+      font-size: 12px;
       text-decoration: none;
       padding: unit-space(0.5);
       margin-left: unit-space(1);
@@ -43,12 +43,6 @@
     nav a {
       display: block;
       text-align: center;
-    }
-  }
-
-  @include tabletAndMobileOnly {
-    .copyright {
-      margin-top: unit-space(1);
     }
   }
 

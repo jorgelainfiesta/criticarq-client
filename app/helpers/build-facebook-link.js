@@ -1,9 +1,9 @@
-import Ember from 'ember';
+import SocialLinkHelper from './build-social-link';
 
-export function buildFacebookLink() {
-  let url = document.URL;
-  let link = `https://facebook.com/sharer/sharer.php?u=${url}`;
-  return link;
-}
-
-export default Ember.Helper.helper(buildFacebookLink);
+export default SocialLinkHelper.extend({
+  compute() {
+    let url = this.get('currentUrl');
+    let link = `https://facebook.com/sharer/sharer.php?u=${url}`;
+    return link;
+  }
+});

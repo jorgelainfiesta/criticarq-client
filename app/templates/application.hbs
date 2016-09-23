@@ -1,35 +1,11 @@
 {{title 'CRITICarq' prepend=true separator=" \ "}}
 
-{{app-nav fixed=true categories=model.categories useHomeNav=useHomeNav}}
+{{app-nav categories=model.categories useHomeNav=useHomeNav}}
 
 {{outlet}}
 
 <footer class="site-footer">
-  <nav>
-    {{#link-to 'home'}}
-      Inicio
-    {{/link-to}}
-    {{#each model.categories as |category|}}
-      {{#link-to 'articles.category' category.slug activeClass=category.slug}}
-        {{category.name}}
-      {{/link-to}}
-    {{/each}}
-    <a href="https://www.facebook.com/criticarq/" target="_blank">
-      <i class="fa fa-facebook"></i>
-      <span class="social-label">Facebook</span>
-    </a>
-    <a href="https://www.instagram.com/criticarq.gt/" target="_blank">
-      <i class="fa fa-instagram"></i>
-      <span class="social-label">Instagram</span>
-    </a>
-    <a href="https://www.pinterest.com/criticarq/" target="_blank">
-      <i class="fa fa-pinterest"></i>
-      <span class="social-label">Pinterest</span>
-    </a>
-  </nav>
   <p class="copyright">
-    &copy; 2016 CRITICarq.gt
+    &copy; 2016 CRITICarq.gt y colaboradores.
   </p>
 </footer>
-
-{{ember-load-remover}}

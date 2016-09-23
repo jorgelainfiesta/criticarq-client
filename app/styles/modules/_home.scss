@@ -1,7 +1,106 @@
 .home-tiles {
-  &.articles-tiles-grid  {
-    @include desktop() {
-      height: 88.5vh;
+  @include site-column;
+  padding: 2rem 0;
+  display: block;
+
+  .article-tile {
+    width: 50%;
+    height: 50vh;
+    min-height: 250px;
+    overflow: hidden;
+    padding-bottom: 1rem;
+
+    &:nth-child(odd) {
+      padding-right: 1rem;
+    }
+
+    .image-preview {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background-size: cover;
+      background-position: center center;
+
+      img {
+        position: absolute;
+        top: -1000px;
+      }
+    }
+
+    h3 {
+      position: absolute;
+      top: 3rem;
+      left: 1rem;
+      max-width: 80%;
+      box-sizing: border-box;
+      line-height: 1.3;
+      padding: 5px 0;
+      border-width: 0 0 0 20px;
+      border-left-style: solid;
+      font-size: 20px;
+      a {
+        border: none;
+        font-size: 20px;
+        padding: 4px 0;
+        color: #fff;
+        display: inline;
+        margin: 0;
+
+        strong {
+          position: relative;
+          left: -10px;
+        }
+      }
+    }
+    h4 {
+      position: absolute;
+      color: #fff;
+      border-color: #fff;
+      bottom: 0;
+      left: 1rem;
+    }
+    @include desktop {
+      h3 {
+        font-size: 26px;
+        padding: 8px 0;
+        max-width: 50%;
+        left: 3rem;
+        a {
+          font-size: 26px;
+          padding: 7px 0;
+        }
+      }
+      h4 {
+        left: 3rem;
+        font-size: 20px;
+      }
+    }
+
+    @each $category-slug, $category-color in $category-colors {
+      &.category-#{$category-slug} {
+        h3 {
+          border-color: rgba($category-color, 0.8);
+          a {
+            background-color: rgba($category-color, 0.8);
+          }
+        }
+      }
+    }
+
+    &:first-child {
+      width: 100%;
+      padding: 0 0 1rem 0;
+    }
+    &:nth-child(even) {
+      padding-right: 1rem;
     }
   }
+
+  .swiper-container-horizontal > .swiper-pagination-bullets {
+    bottom: 0;
+  }
+  .swiper-pagination-bullet-active {
+    background: #000;
+  }
+
 }

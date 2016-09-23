@@ -13,10 +13,17 @@
   </div>
 </section>
 
+{{#unless fastboot.isFastBoot}}
 <section class="suggested-articles">
   <div class="articles-tiles-grid">
     {{#each model.article.related as |article|}}
-      {{article-tile article=article}}
+      {{article-tile
+          article=article
+          noContributor=true
+          category=article.categories.firstObject
+          class=(category-class article.categories.firstObject.slug)
+      }}
     {{/each}}
   </div>
 </section>
+{{/unless}}

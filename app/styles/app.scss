@@ -8,3 +8,11 @@
 @import 'modules/header';
 @import 'modules/footer';
 @import 'modules/loading';
+
+// From github.com/jonsuh/hamburgers
+$hamburger-layer-color: $header-text;
+$hamburger-padding-y: 18px;
+$hamburger-layer-width: 20px;
+$hamburger-layer-height: 1px;
+$hamburger-layer-spacing: 4px;
+@import 'hamburgers/hamburgers';

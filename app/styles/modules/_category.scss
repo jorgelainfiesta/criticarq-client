@@ -7,4 +7,25 @@
       }
     }
   }
+  // .category-index.category-#{$category-slug} {
+  //   h2 {
+  //     color: $category-color;
+  //     border-color: $category-color;
+  //   }
+  // }
+}
+
+.category-index {
+  @include site-column;
+  h2 {
+    font-family: $title-font;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom-width: 4px;
+    border-bottom-style: solid;
+    padding: 12px 12px 12px 0;
+    margin: 14px 0;
+  }
 }

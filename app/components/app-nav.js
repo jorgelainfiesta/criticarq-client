@@ -13,13 +13,14 @@ const {
 export default Component.extend({
   tagName: 'header',
   classNames: ['site-nav'],
-  classNameBindings: ['useFixed:fixed:static', 'showHeader:hide-nav'],
+  classNameBindings: ['showHeader:hide-nav'],
   headerHeight: 80,
   delta: 5,
   lastPosition: 0,
   isMobileOpen: false,
 
   fastboot: service(),
+  media: service(),
 
   useFixed: computed('fixed', 'useHomeNav', {
     get() {
@@ -30,6 +31,7 @@ export default Component.extend({
   init() {
     this._super(...arguments);
     let fastboot = this.get('fastboot');
+    this.set('isMobileOpen', false);
     if (!get(fastboot, 'isFastBoot')) {
       window.onscroll = run.bind(this, this._checkScroll);
     }
@@ -67,11 +69,6 @@ export default Component.extend({
       } else {
         this._closeNav();
       }
-    }
-  },
-  click() {
-    if (this.get('isMobileOpen')) {
-      this._closeNav();
     }
   },
   _closeNav() {
