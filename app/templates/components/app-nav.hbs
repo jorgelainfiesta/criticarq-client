@@ -6,15 +6,15 @@
     Conectando los puntos entre la arquitectura a nivel académico, iniciativa privada y pública.
   </h2>
 
-  <nav class="{{if isMobileOpen 'open-mobile animated' 'closed-mobile'}}">
+  <nav class="{{if isMobileOpen 'open-mobile animated' 'closed-mobile'}} {{if header.home 'home'}}">
     {{#each categories as |category|}}
       {{#if media.isDesktop}}
-        {{#link-to 'articles.category' category.slug activeClass=category.slug}}
+        {{#link-to 'articles.category' category.slug activeClass=category.slug class=(category-class category.slug)}}
           {{category.name}}
         {{/link-to}}
       {{else}}
         <span {{action 'toggleNav'}}>
-          {{#link-to 'articles.category' category.slug activeClass=category.slug}}
+          {{#link-to 'articles.category' category.slug activeClass=category.slug class=(category-class category.slug)}}
             {{category.name}}
           {{/link-to}}
         </span>

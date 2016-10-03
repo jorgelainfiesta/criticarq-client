@@ -3,16 +3,19 @@ import ResetScrollTopMixin from 'criticarq-client/mixins/reset-scroll-top';
 
 const {
   get,
+  inject: { service },
   RSVP,
   Route
 } = Ember;
 
 export default Route.extend(ResetScrollTopMixin, {
+  header: service(),
+
   activate() {
-    this.send('useHomeNav', true);
+    this.set('header.home', true);
   },
   deactivate() {
-    this.send('useHomeNav', false);
+    this.set('header.home', false);
   },
   model() {
     let featured = this.store.query('article', {

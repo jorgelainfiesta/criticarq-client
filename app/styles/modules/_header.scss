@@ -64,6 +64,13 @@ body {
         }
       }
     }
+    &.home {
+      @each $category-slug, $category-color in $category-colors {
+        a.category-#{$category-slug} {
+            color: $category-color;
+        }
+      }
+    }
     .global-social {
       a {
         display: inline-block;
