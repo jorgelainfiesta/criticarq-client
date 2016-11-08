@@ -19,8 +19,21 @@
           {{/link-to}}
         </span>
       {{/if}}
-
     {{/each}}
+
+    {{#if media.isDesktop}}
+      {{#link-to 'events' activeClass='eventos' class=(category-class 'eventos')}}
+        Eventos
+      {{/link-to}}
+    {{else}}
+      <span {{action 'toggleNav'}}>
+        {{#link-to 'events' activeClass='eventos' class=(category-class 'eventos')}}
+          Eventos
+        {{/link-to}}
+      </span>
+    {{/if}}
+
+
     <div class="global-social">
       <a href="https://www.facebook.com/criticarq/" target="_blank">
         <i class="fa fa-facebook"></i>

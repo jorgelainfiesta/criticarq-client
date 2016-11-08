@@ -1,0 +1,17 @@
+{{title model.event.title}}
+
+{{article-single
+  article=model.event category=(hash slug="eventos" name="Eventos")
+  isEvent=true
+}}
+
+{{#each model.event.contributors as |contributor|}}
+  {{contributor-bio contributor=contributor}}
+{{/each}}
+
+<section class="article-comments">
+  <div class="article-disquss">
+    <h2>Únete a la discusión</h2>
+    {{disqus-comments identifier=model.event.slug}}
+  </div>
+</section>

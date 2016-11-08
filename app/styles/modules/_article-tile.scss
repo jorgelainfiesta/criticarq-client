@@ -94,7 +94,7 @@
     position: relative;
     overflow: hidden;
     max-height: 5rem;
-    &:before {
+    &.add-fade:before {
       content: '';
       position: absolute;
       width: 100%;
@@ -104,6 +104,9 @@
     }
     p {
       display: inline-block;
+    }
+    strong {
+      font-weight: bold;
     }
     br {
       display: none;

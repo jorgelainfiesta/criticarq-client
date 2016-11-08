@@ -1,0 +1,23 @@
+.events-list {
+  @extend .category-index;
+  @include tablet() {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+  }
+}
+.event-card {
+  @extend .article-tile;
+  padding-top: 2rem;
+  h3 a {
+    border-color: $events-color;
+  }
+  @include tablet {
+    h3 {
+      border-color: rgba($events-color, 0.8);
+      a {
+        background-color: rgba($events-color, 0.8);
+      }
+    }
+  }
+}

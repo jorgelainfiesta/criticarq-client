@@ -34,6 +34,9 @@ Router.map(function() {
     });
   });
   this.route('home', { path: 'portada' });
+  this.route('events', { path: 'eventos' }, function() {
+    this.route('event', { path: ':event_slug' });
+  });
 });
 
 export default Router;

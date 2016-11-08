@@ -1,0 +1,23 @@
+<section class="category-index {{category-class 'eventos'}}">
+  <h2>Eventos</h2>
+
+  {{#infinite-scroller on-load-more=(perform loadMore) use-document=true trigger-at='70%'}}
+    <div class="articles-tiles-grid">
+      {{#each model.events as |article|}}
+        {{article-tile
+            article=article
+            category=(hash slug='eventos')
+            class=(category-class 'eventos')
+            onClick=(transition-to 'events.event' event.slug)
+            isEvent=true
+        }}
+      {{/each}}
+    </div>
+
+    {{#unless loadMore.isIdle}}
+      <div class="loading-posts">
+        <span class="signal-loader"></span>
+      </div>
+    {{/unless}}
+  {{/infinite-scroller}}
+</section>

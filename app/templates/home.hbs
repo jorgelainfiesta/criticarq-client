@@ -31,7 +31,26 @@
   {{/swiper-container}}
 </div>
 
-<div class="category-index">
+<h2 class="section-title">Próximos eventos:</h2>
+<br>
+<section class="events-list">
+  {{#each model.events as |event|}}
+    {{#article-tile
+        article=event
+        category=(hash slug='eventos')
+        class=(category-class 'eventos')
+        onClick=(transition-to 'events.event' event.slug)
+        isEvent=true
+    }}
+      <strong>¿Cuándo?</strong> {{moment-calendar event.startDate locale='es'}}
+      <strong>¿Dónde?</strong> {{event.location}}
+    {{/article-tile}}
+  {{/each}}
+</section>
+
+<h2 class="section-title">Para leer, pensar y criticar:</h2>
+<br>
+<section class="category-index">
   {{#infinite-scroller on-load-more=(perform loadMore) use-document=true trigger-at='70%'}}
     <div class="articles-tiles-grid">
       {{#each model.articles as |article|}}
@@ -52,4 +71,4 @@
       </div>
     {{/unless}}
   {{/infinite-scroller}}
-</div>
+</section>

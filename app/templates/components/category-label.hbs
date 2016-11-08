@@ -1,3 +1,9 @@
-{{#link-to 'articles.category' category.slug class="category-link"}}
-  +{{category.name}}
-{{/link-to}}
+{{#if isEvent}}
+  {{#link-to 'events' class="category-link"}}
+    +{{category.name}}
+  {{/link-to}}
+{{else}}
+  {{#link-to 'articles.category' category.slug class="category-link"}}
+    +{{category.name}}
+  {{/link-to}}
+{{/if}}

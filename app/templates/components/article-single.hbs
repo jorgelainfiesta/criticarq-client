@@ -4,12 +4,18 @@
 
 <article class="article-read">
   {{#unless preview}}
-    {{category-label category=category}}
+    {{category-label category=category isEvent=isEvent}}
   {{/unless}}
   <h2 class="article-title">
-    {{#link-to 'articles.category.article' article.slug}}
-      {{article.title}}
-    {{/link-to}}
+    {{#if isEvent}}
+      {{#link-to 'events.event' article.slug}}
+        {{article.title}}
+      {{/link-to}}
+    {{else}}
+      {{#link-to 'articles.category.article' article.slug}}
+        {{article.title}}
+      {{/link-to}}
+    {{/if}}
   </h2>
   <h3 class='article-author'>
     {{contributors-names article.contributors}}

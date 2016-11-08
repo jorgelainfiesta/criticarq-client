@@ -2,7 +2,7 @@ import Ember from 'ember';
 import ResetScrollTopMixin from 'criticarq-client/mixins/reset-scroll-top';
 
 const {
-  get,
+  A,
   inject: { service },
   RSVP,
   Route
@@ -24,21 +24,16 @@ export default Route.extend(ResetScrollTopMixin, {
       }
     });
 
-    let articles = this.store.query('article', {
-      filter: {
-        paged: 1,
-        posts_per_page: 4,
-        orderby: 'rand'
-      }
-    });
+    let events = this.store.findAll('event');
 
     return RSVP.hash({
       featured,
-      articles
+      events,
+      articles: A()
     });
   },
-  setupController(controller, model) {
-    controller.totalPages = get(model, 'meta.totalPages');
+  setupController(controller) {
+    controller.totalPages = 2;
     controller.page = 1;
     this._super(...arguments);
   }

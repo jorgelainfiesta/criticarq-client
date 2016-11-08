@@ -1,5 +1,6 @@
 @import 'foundation/all';
 
+@import 'modules/events';
 @import 'modules/category';
 @import 'modules/article';
 @import 'modules/article-tile';
@@ -16,3 +17,18 @@ $hamburger-layer-width: 20px;
 $hamburger-layer-height: 1px;
 $hamburger-layer-spacing: 4px;
 @import 'hamburgers/hamburgers';
+
+
+.section-title {
+  @include site-column();
+
+  font-family: $title-font;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-bottom-width: 4px;
+  border-bottom-style: solid;
+  padding: 12px 12px 12px 0;
+  margin: 14px 0;
+}

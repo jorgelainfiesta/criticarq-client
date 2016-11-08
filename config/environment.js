@@ -20,7 +20,10 @@ module.exports = function(environment) {
       // Here you can pass flags/options to your application instance
       // when it is created
     },
-    apiHost: 'http://content.criticarq.gt'
+    apiHost: 'http://content.criticarq.gt',
+    moment: {
+      includeLocales: ['es']
+    }
   };
 
   if (environment === 'development') {
