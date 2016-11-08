@@ -40,6 +40,7 @@
               article=article
               category=article.categories.firstObject
               class=(category-class article.categories.firstObject.slug)
+              onClick=(transition-to 'articles.category.article' article.categories.firstObject.slug article.slug)
           }}
         {{/unless}}
       {{/each}}

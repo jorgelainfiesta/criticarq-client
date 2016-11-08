@@ -4,7 +4,12 @@
   {{#infinite-scroller on-load-more=(perform loadMore) use-document=true trigger-at='70%'}}
     <div class="articles-tiles-grid">
       {{#each model.articles as |article|}}
-        {{article-tile article=article category=model.category class=(category-class model.category.slug)}}
+        {{article-tile
+            article=article
+            category=model.category
+            class=(category-class model.category.slug)
+            onClick=(transition-to 'articles.category.article' model.category.slug article.slug)
+        }}
       {{/each}}
     </div>
 
