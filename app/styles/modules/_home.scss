@@ -1,11 +1,10 @@
 .home-tiles {
-  @include site-column;
-  padding: 2rem 0;
   display: block;
+  padding-bottom: 20px;
 
   .article-tile {
-    width: 50%;
-    height: 50vh;
+    width: 100%;
+    height: 70vh;
     min-height: 250px;
     overflow: hidden;
     padding-bottom: 1rem;
@@ -14,12 +13,21 @@
       padding-right: 1rem;
     }
 
+    .article-wrap {
+      @include site-column();
+      position: relative;
+      height: 100%;
+    }
+
     .image-preview {
       width: 100%;
       height: 100%;
       overflow: hidden;
       background-size: cover;
       background-position: center center;
+      position: absolute;
+      top: 0;
+      left: 0;
 
       img {
         position: absolute;
@@ -56,10 +64,12 @@
       position: absolute;
       color: #fff;
       border-color: #fff;
-      bottom: 0;
+      top: 10rem;
+      bottom: initial;
       left: 1rem;
     }
     @include desktop {
+      height: 80vh;
       h3 {
         font-size: 26px;
         padding: 8px 0;
@@ -97,10 +107,16 @@
   }
 
   .swiper-container-horizontal > .swiper-pagination-bullets {
-    bottom: 0;
+    bottom: 1rem;
   }
-  .swiper-pagination-bullet-active {
-    background: #000;
+  .swiper-pagination-bullet {
+    background: rgba(#999, 0.5);
+    border: 1px solid #fff;
+    opacity: 1;
+    &.swiper-pagination-bullet-active {
+      background: #fff;
+      opacity: 1;
+    }
   }
 
 }

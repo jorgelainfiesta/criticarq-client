@@ -26,10 +26,9 @@ export default Route.extend(ResetScrollTopMixin, {
 
     let articles = this.store.query('article', {
       filter: {
-        'tag__not_in': ['6'],
         paged: 1,
         posts_per_page: 4,
-
+        orderby: 'rand'
       }
     });
 

@@ -3,12 +3,28 @@
     {{#each model.featured as |article|}}
       {{#with article.categories.firstObject as |category|}}
         {{#swiper-slide}}
-          {{article-tile
-              article=article
-              category=category
-              useLargeImage=true
-              class=(category-class article.categories.firstObject.slug)
-          }}
+          <div class="article-tile {{category-class article.categories.firstObject.slug}}"
+            {{action (transition-to 'articles.category.article' category.slug article.slug) on="click"}}
+          >
+            <div
+              class="image-preview"
+              style="{{background-image (if useLargeImage article.featured.large.url article.featured.medium.url)}}"
+            >
+              <img src="{{article.featured.medium.url}}" alt="{{article.title}}" />
+            </div>
+            <div class="article-wrap">
+              <h3 class="article-title">
+                {{#link-to 'articles.category.article' category.slug article.slug}}
+                  <strong>{{article.title}}</strong>
+                {{/link-to}}
+              </h3>
+              {{#unless noContributor}}
+              <h4 class="article-author">
+                {{contributors-names article.contributors}}
+              </h4>
+              {{/unless}}
+            </div>
+          </div>
         {{/swiper-slide}}
       {{/with}}
     {{/each}}

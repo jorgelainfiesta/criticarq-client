@@ -50,6 +50,7 @@
     "ember-load-initializers": "^0.5.1",
     "ember-metrics": "0.6.2",
     "ember-page-title": "3.0.1",
+    "ember-reactive-helpers": "0.4.0",
     "ember-resolver": "^2.0.3",
     "ember-responsive": "1.2.7",
     "ember-simple-infinite-scroller": "0.0.3",
