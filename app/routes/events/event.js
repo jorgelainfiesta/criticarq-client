@@ -10,7 +10,7 @@ const {
 export default Route.extend(ResetScrollTopMixin, {
   model(params) {
     const event = this.store.query('event', {
-      slug: params.article_slug
+      slug: params.event_slug
     })
     .then((events) => {
       return get(events, 'firstObject');
