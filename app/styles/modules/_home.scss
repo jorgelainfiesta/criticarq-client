@@ -70,14 +70,14 @@
       left: 1rem;
       margin: 0;
     }
-    @include tablet() {
-      .article-title {
-        left: 50%;
-      }
-      h4 {
-        left: 50%;
-      }
-    }
+    // @include tablet() {
+    //   .article-title {
+    //     left: 50%;
+    //   }
+    //   h4 {
+    //     left: 50%;
+    //   }
+    // }
     @include desktop {
       h3 {
         font-size: 26px;
