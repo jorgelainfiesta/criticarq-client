@@ -1,10 +1,11 @@
 .home-tiles {
   display: block;
   margin-bottom: 20px;
+  margin-top: -1 * $header-height;
 
   .article-tile {
     width: 100%;
-    height: 70vh;
+    height: 100vh;
     min-height: 250px;
     overflow: hidden;
     padding-bottom: 1rem;
@@ -35,9 +36,10 @@
       }
     }
 
-    h3 {
+    .article-title {
       position: absolute;
-      top: 3rem;
+      top: inherit;
+      bottom: 6rem;
       left: 1rem;
       max-width: 80%;
       box-sizing: border-box;
@@ -64,24 +66,29 @@
       position: absolute;
       color: #fff;
       border-color: #fff;
-      top: 10rem;
-      bottom: initial;
+      bottom: 3rem;
       left: 1rem;
+      margin: 0;
+    }
+    @include tablet() {
+      .article-title {
+        left: 50%;
+      }
+      h4 {
+        left: 50%;
+      }
     }
     @include desktop {
-      height: 80vh;
       h3 {
         font-size: 26px;
         padding: 8px 0;
         max-width: 50%;
-        left: 3rem;
         a {
           font-size: 26px;
           padding: 7px 0;
         }
       }
       h4 {
-        left: 3rem;
         font-size: 20px;
       }
     }

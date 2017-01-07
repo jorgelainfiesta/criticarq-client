@@ -3,6 +3,7 @@
     display: flex;
     flex-wrap: wrap;
     align-items: stretch;
+    justify-content: space-between;
   }
 }
 
@@ -10,10 +11,20 @@
   position: relative;
   box-sizing: border-box;
   border-bottom: 3rem;
+  padding-bottom: 1rem;
+  overflow: hidden;
+  margin-bottom: 3rem;
 
   .image-preview {
+    width: 100%;
+    height: 250px;
+    background-size: cover;
+    background-position: center center;
+    overflow: hidden;
+
     img {
-      max-width: 100%;
+      position: absolute;
+      top: -1000px;
     }
   }
 
@@ -27,63 +38,54 @@
     text-decoration: none;
     border-bottom: 1px solid #fff;
   }
+  h3 {
+    position: relative;
+    top: -1rem;
+    max-width: 80%;
+    box-sizing: border-box;
+    line-height: 1.3;
+    padding: 3px 0;
+    border-width: 0 0 0 20px;
+    border-left-style: solid;
+    a {
+      border: none;
+      padding: 4px 0;
+      color: #fff;
+      display: inline;
+      margin: 0;
+
+      strong {
+        position: relative;
+        left: -10px;
+      }
+    }
+  }
+
   h4 {
     font-family: $title-font;
     font-weight: bold;
     border-left: 2px solid gray;
     padding: 4.5px 9px;
-    margin: 9px 0 0 0;
     font-size: 12px;
     color: gray;
+    margin: 0 0 1rem 0;
   }
   @include tablet {
-    width: 50%;
-    padding-bottom: 1rem;
-    overflow: hidden;
-    margin-bottom: 3rem;
-
-    &:nth-child(odd) {
-      padding-right: 1rem;
-    }
-
-    .image-preview {
-      width: 100%;
-      height: 250px;
-      background-size: cover;
-      background-position: center center;
-      overflow: hidden;
-
-      img {
-        position: absolute;
-        top: -1000px;
-      }
-    }
+    width: 47%;
 
     h3 {
-      position: relative;
-      top: -1rem;
       left: 1rem;
-      max-width: 80%;
-      box-sizing: border-box;
-      line-height: 1.3;
-      padding: 3px 0;
-      border-width: 0 0 0 20px;
-      border-left-style: solid;
-      a {
-        border: none;
-        padding: 4px 0;
-        color: #fff;
-        display: inline;
-        margin: 0;
+    }
 
-        strong {
-          position: relative;
-          left: -10px;
-        }
-      }
+    &:nth-child(odd) {
+      float: left;
+      padding-right: 1rem;
+    }
+    &:nth-child(even) {
+      float: right;
     }
     h4 {
-      margin: 1rem;
+      margin: 0 1rem 1rem 1rem;
     }
     .excerpt {
       margin-left: 1rem;
@@ -123,15 +125,15 @@
 
   @include desktop {
     h3 {
-      font-size: 24px;
+      font-size: 20px;
       padding: 6px 0;
       a {
-        font-size: 24px;
+        font-size: 20px;
         padding: 5px 0;
       }
     }
     h4 {
-      font-size: 18px;
+      font-size: 16px;
     }
   }
   .category-label {
@@ -145,15 +147,10 @@
   }
   @each $category-slug, $category-color in $category-colors {
     &.category-#{$category-slug} {
-      h3 a {
-        border-color: $category-color;
-      }
-      @include tablet {
-        h3 {
-          border-color: rgba($category-color, 0.8);
-          a {
-            background-color: rgba($category-color, 0.8);
-          }
+      h3 {
+        border-color: rgba($category-color, 0.8);
+        a {
+          background-color: rgba($category-color, 0.8);
         }
       }
     }

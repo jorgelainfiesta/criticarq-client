@@ -31,4 +31,8 @@ $hamburger-layer-spacing: 4px;
   border-bottom-style: solid;
   padding: 12px 12px 12px 0;
   margin: 14px 0;
+
+  @include mobileOnly() {
+    text-align: center;
+  }
 }

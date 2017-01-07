@@ -1,5 +1,5 @@
 <div class="articles-tiles-grid home-tiles">
-  {{#swiper-container pagination=true autoplay=4000}}
+  {{#swiper-container pagination=true}}
     {{#each model.featured as |article|}}
       {{#with article.categories.firstObject as |category|}}
         {{#swiper-slide}}
@@ -31,7 +31,7 @@
   {{/swiper-container}}
 </div>
 
-<h2 class="section-title">Para leer, pensar y criticar:</h2>
+<h2 class="section-title">Para leer, pensar y criticar</h2>
 <br>
 <section class="category-index">
   {{#infinite-scroller on-load-more=(perform loadMore) use-document=true trigger-at='70%'}}
