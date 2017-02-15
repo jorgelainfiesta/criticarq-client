@@ -5,7 +5,8 @@ module.exports = function(deployTarget) {
       key: 'fastboot-release.json'
     },
     'gcloud-storage': {
-        bucket: 'criticarq-assets'
+      projectId: 'carbon-scene-127723',
+      bucket: 'criticarq-assets'
     }
   };
 };

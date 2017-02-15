@@ -31,6 +31,21 @@
   {{/swiper-container}}
 </div>
 
+<div class="category-index">
+  <h2 class="section-title">Próximos Eventos</h2>
+  <div class="articles-tiles-grid">
+    {{#each model.events as |event|}}
+        {{article-tile
+            article=event
+            category=(hash slug='eventos')
+            class=(category-class 'eventos')
+            onClick=(transition-to 'events.event' event.slug)
+            isEvent=true
+        }}
+    {{/each}}
+  </div>
+</div>
+
 <h2 class="section-title">Para leer, pensar y criticar</h2>
 <br>
 <section class="category-index">
