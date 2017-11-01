@@ -1,12 +1,12 @@
-import Ember from 'ember';
+import EmberRouter from '@ember/routing/router';
+import { inject as service } from '@ember/service';
+import { scheduleOnce } from '@ember/runloop';
 import config from './config/environment';
 
-const {
-  inject: { service }
-} = Ember;
 
-const Router = Ember.Router.extend({
+const Router = EmberRouter.extend({
   location: config.locationType,
+  rootURL: config.rootURL,
 
   metrics: service(),
 
@@ -16,11 +16,10 @@ const Router = Ember.Router.extend({
   },
 
   _trackPage() {
-    Ember.run.scheduleOnce('afterRender', this, () => {
-      const page = document.location.pathname;
+    scheduleOnce('afterRender', this, () => {
+      const page = this.getWithDefault('currentPath', 'unknown');
       const title = this.getWithDefault('currentRouteName', 'unknown');
-
-      Ember.get(this, 'metrics').trackPage({ page, title });
+      this.get('metrics').trackPage({ page, title });
     });
   }
 });
