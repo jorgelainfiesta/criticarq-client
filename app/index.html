@@ -10,16 +10,16 @@
     {{content-for "head"}}
 
     <link href="https://fonts.googleapis.com/css?family=Istok+Web:400,700|Lora:400,400i,700&subset=latin-ext" rel="stylesheet">
-    <link rel="stylesheet" href="assets/vendor.css">
-    <link rel="stylesheet" href="assets/criticarq-client.css">
+    <link integrity="" rel="stylesheet" href="{{rootURL}}assets/vendor.css">
+    <link integrity="" rel="stylesheet" href="{{rootURL}}assets/criticarq-client.css">
 
     {{content-for "head-footer"}}
   </head>
   <body>
     {{content-for "body"}}
 
-    <script src="assets/vendor.js"></script>
-    <script src="assets/criticarq-client.js"></script>
+    <script src="{{rootURL}}assets/vendor.js"></script>
+    <script src="{{rootURL}}assets/criticarq-client.js"></script>
 
     {{content-for "body-footer"}}
   </body>

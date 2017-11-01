@@ -4,8 +4,8 @@ module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'criticarq-client',
     environment: environment,
-    baseURL: '/',
     locationType: 'auto',
+    rootURL: '/',
     disqus: {
       shortname: 'criticarq'
     },
@@ -13,6 +13,10 @@ module.exports = function(environment) {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
         // e.g. 'with-controller': true
+      },
+      EXTEND_PROTOTYPES: {
+        // Prevent Ember Data from overriding Date.parse.
+        Date: false
       }
     },
 
@@ -23,6 +27,9 @@ module.exports = function(environment) {
     apiHost: 'http://content.criticarq.gt',
     moment: {
       includeLocales: ['es']
+    },
+    fastboot: {
+      hostWhitelist: ['criticarq.gt', /^localhost:\d+$/]
     }
   };
 
