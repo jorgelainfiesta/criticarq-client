@@ -1,6 +1,6 @@
-import Ember from 'ember';
-const { inject: { service } } = Ember;
+import Controller from '@ember/controller';
+import { inject as service } from '@ember/service';
 
-export default Ember.Controller.extend({
+export default Controller.extend({
   fastboot: service()
 });

@@ -1,5 +1,5 @@
-import Ember from 'ember';
-const { isPresent } = Ember;
+import { helper as buildHelper } from '@ember/component/helper';
+import { isPresent } from '@ember/utils';
 
 export function contributorsNames([contributors]) {
   if (isPresent(contributors)) {
@@ -14,4 +14,4 @@ export function contributorsNames([contributors]) {
   }
 }
 
-export default Ember.Helper.helper(contributorsNames);
+export default buildHelper(contributorsNames);

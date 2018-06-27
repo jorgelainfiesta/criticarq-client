@@ -1,14 +1,9 @@
-import Ember from 'ember';
-
-const {
-  $,
-  Component,
-  computed,
-  get,
-  inject: { service },
-  isPresent,
-  run
-} = Ember;
+import Component from '@ember/component';
+import { computed, get } from '@ember/object';
+import { inject as service } from '@ember/service';
+import { isPresent } from '@ember/utils';
+import { run } from '@ember/runloop';
+import $ from 'jquery';
 
 export default Component.extend({
   tagName: 'header',

@@ -1,8 +1,8 @@
-import Ember from 'ember';
+import Controller from '@ember/controller';
+import { get } from '@ember/object';
 import { task } from 'ember-concurrency';
-const { get } = Ember;
 
-export default Ember.Controller.extend({
+export default Controller.extend({
   loadMore: task(function * () {
     let { page, totalPages } = this.getProperties('page', 'totalPages');
     if (page === totalPages) {

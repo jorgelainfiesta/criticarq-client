@@ -1,5 +1,5 @@
-import Ember from 'ember';
-const { get } = Ember;
+import { helper as buildHelper } from '@ember/component/helper';
+import { get } from '@ember/object';
 
 export function inHome([postTags]) {
   return postTags.any((tag) => {
@@ -7,4 +7,4 @@ export function inHome([postTags]) {
   });
 }
 
-export default Ember.Helper.helper(inHome);
+export default buildHelper(inHome);

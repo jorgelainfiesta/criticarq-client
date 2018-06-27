@@ -1,15 +1,15 @@
-import Ember from 'ember';
+import Controller from '@ember/controller';
+import { get, getProperties, set } from '@ember/object';
 import { task } from 'ember-concurrency';
-const { get } = Ember;
 
-export default Ember.Controller.extend({
+export default Controller.extend({
   loadMore: task(function * () {
-    let { page, totalPages } = this.getProperties('page', 'totalPages');
+    let { page, totalPages } = getProperties(this, 'page', 'totalPages');
     if (page === totalPages) {
       return;
     }
 
-    let loadedArticles = this.get('model.events.content');
+    let loadedArticles = get(this, 'model.events.content');
     page += 1;
 
     let articles = yield this.store.query('event', {
@@ -19,7 +19,7 @@ export default Ember.Controller.extend({
       }
     });
 
-    this.set('page', page);
+    set(this, 'page', page);
     loadedArticles.pushObjects(articles.content);
   })
 });
