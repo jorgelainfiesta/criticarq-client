@@ -1,8 +1,8 @@
-import Ember from 'ember';
+import Component from '@ember/component';
 
-export default Ember.Component.extend({
+export default Component.extend({
   classNames: ['article-tile'],
   click() {
-    this.sendAction('onClick');
+    this.get('onClick')();
   }
 });

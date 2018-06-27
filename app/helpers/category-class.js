@@ -1,8 +1,8 @@
-import Ember from 'ember';
-const { String: { htmlSafe } } = Ember;
+import { helper as buildHelper } from '@ember/component/helper';
+import { htmlSafe } from '@ember/template';
 
 export function categoryClass([categorySlug]) {
   return htmlSafe(`category-${categorySlug}`);
 }
 
-export default Ember.Helper.helper(categoryClass);
+export default buildHelper(categoryClass);

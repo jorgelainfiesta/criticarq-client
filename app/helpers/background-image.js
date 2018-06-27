@@ -1,8 +1,8 @@
-import Ember from 'ember';
-const { String: { htmlSafe } } = Ember;
+import { helper as buildHelper } from '@ember/component/helper';
+import { htmlSafe } from '@ember/template';
 
 export function backgroundImage([imageUrl]) {
   return htmlSafe(`background-image: url(${imageUrl});`);
 }
 
-export default Ember.Helper.helper(backgroundImage);
+export default buildHelper(backgroundImage);

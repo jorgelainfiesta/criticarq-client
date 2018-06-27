@@ -1,11 +1,7 @@
-import Ember from 'ember';
+import Route from '@ember/routing/route';
+import { get } from '@ember/object';
+import RSVP from 'rsvp';
 import ResetScrollTopMixin from 'criticarq-client/mixins/reset-scroll-top';
-
-const {
-  get,
-  RSVP,
-  Route
-} = Ember;
 
 export default Route.extend(ResetScrollTopMixin, {
   model(params) {

@@ -1,17 +1,11 @@
-import Ember from 'ember';
-
-const {
-  Component,
-  computed
-} = Ember;
+import Component from '@ember/component';
+import { computed } from '@ember/object';
 
 export default Component.extend({
   classNames: ['article-single'],
   classNameBindings: ['preview:preview:full', 'categoryClass'],
 
-  categoryClass: computed('category.slug', {
-    get() {
-      return `category-${this.get('category.slug')}`;
-    }
+  categoryClass: computed('category.slug', function() {
+    return `category-${this.get('category.slug')}`;
   })
 });

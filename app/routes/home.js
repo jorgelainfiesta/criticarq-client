@@ -1,14 +1,10 @@
-import Ember from 'ember';
+import Route from '@ember/routing/route';
+import { get } from '@ember/object';
+import RSVP from 'rsvp';
+import { A } from '@ember/array';
+import { inject as service } from '@ember/service';
 import moment from 'moment';
 import ResetScrollTopMixin from 'criticarq-client/mixins/reset-scroll-top';
-
-const {
-  A,
-  inject: { service },
-  get,
-  RSVP,
-  Route
-} = Ember;
 
 export default Route.extend(ResetScrollTopMixin, {
   header: service(),
